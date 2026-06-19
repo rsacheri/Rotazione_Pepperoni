@@ -1,9 +1,45 @@
 [gd_scene format=3 uid="uid://c8w2qjk24scyq"]
 
-[node name="Control" type="Control" unique_id=1865527344]
+[ext_resource type="Script" uid="uid://cm4e8ghhge24u" path="res://starting_screen.gd" id="1_mdfg2"]
+
+[sub_resource type="DrawableTexture2D" id="DrawableTexture2D_lryfp"]
+
+[node name="startingScreen" type="Control" unique_id=1865527344]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_mdfg2")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1821244198]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = SubResource("DrawableTexture2D_lryfp")
+
+[node name="menuButtons" type="VBoxContainer" parent="TextureRect" unique_id=1489046637]
+layout_mode = 0
+offset_left = 355.0
+offset_top = 214.0
+offset_right = 874.0
+offset_bottom = 594.0
+
+[node name="start" type="Button" parent="TextureRect/menuButtons" unique_id=481361790]
+clip_contents = true
+layout_mode = 2
+text = "Start"
+
+[node name="options" type="Button" parent="TextureRect/menuButtons" unique_id=1709667438]
+clip_contents = true
+layout_mode = 2
+text = "Options"
+
+[node name="exit" type="Button" parent="TextureRect/menuButtons" unique_id=64614210]
+clip_contents = true
+layout_mode = 2
+text = "Exit"
+
+[connection signal="pressed" from="TextureRect/menuButtons/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="TextureRect/menuButtons/exit" to="." method="_on_exit_pressed"]

@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cv48hy1rj3bwi"]
+
+[ext_resource type="Script" uid="uid://c5m8wydnkiql3" path="res://main_character.gd" id="1_wmkwl"]
+[ext_resource type="Texture2D" uid="uid://duiec5g1illqm" path="res://bearIdle.png" id="2_uvl38"]
+[ext_resource type="Texture2D" uid="uid://84g83x60ng16" path="res://bearThrow.png" id="3_2q423"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lmfss"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_uvl38")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_uvl38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2q423")
+}],
+"loop": 1,
+"name": &"pickUp",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_uvl38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2q423")
+}],
+"loop": 1,
+"name": &"throw",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=122431385]
+script = ExtResource("1_wmkwl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1225846855]
+sprite_frames = SubResource("SpriteFrames_lmfss")
+animation = &"pickUp"
+frame = 1
+frame_progress = 0.14351836

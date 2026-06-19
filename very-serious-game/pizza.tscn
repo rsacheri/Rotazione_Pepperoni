@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://81653nsgfwny"]
+
+[ext_resource type="Texture2D" uid="uid://7vphnpbhyabu" path="res://pizza.png" id="1_5birb"]
+
+[node name="pizza" type="Node2D" unique_id=1429048440]
+
+[node name="pizzaBase" type="Sprite2D" parent="." unique_id=321619430]
+texture = ExtResource("1_5birb")

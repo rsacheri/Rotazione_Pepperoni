@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cuqf8cwomeyl3"]
+
+[ext_resource type="Texture2D" uid="uid://7vphnpbhyabu" path="res://pizza.png" id="1_ajaoc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lmfss"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ajaoc")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="tomato" type="Node2D" unique_id=1839137245]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=86093682]
+sprite_frames = SubResource("SpriteFrames_lmfss")

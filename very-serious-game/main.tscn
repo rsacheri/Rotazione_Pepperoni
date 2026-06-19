@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://ttvhmysaaa06"]
+
+[ext_resource type="PackedScene" uid="uid://cv48hy1rj3bwi" path="res://main_character.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://81653nsgfwny" path="res://pizza.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cuqf8cwomeyl3" path="res://tomato.tscn" id="3_h2yge"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lmfss"]
+size = Vector2(70, 68)
+
+[node name="main" type="Control" unique_id=1628726161]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bear" parent="." unique_id=122431385 instance=ExtResource("1_ig7tw")]
+position = Vector2(642, 520)
+scale = Vector2(0.3, 0.3)
+
+[node name="pizza" parent="." unique_id=1429048440 instance=ExtResource("2_0xm2m")]
+position = Vector2(628, 201)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=472016209]
+custom_minimum_size = Vector2(105, 105)
+clip_contents = true
+layout_mode = 0
+offset_left = 278.0
+offset_top = 616.0
+offset_right = 1028.0
+offset_bottom = 721.0
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer" unique_id=1386306840]
+layout_mode = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HBoxContainer/CenterContainer" unique_id=1122339355]
+position = Vector2(242, 48)
+shape = SubResource("RectangleShape2D_lmfss")
+
+[node name="tomato" parent="HBoxContainer/CenterContainer/CollisionShape2D" unique_id=1839137245 instance=ExtResource("3_h2yge")]
+modulate = Color(1, 0, 0.13333334, 1)
+position = Vector2(-1, 1)
+scale = Vector2(0.3, 0.3)
