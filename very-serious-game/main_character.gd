@@ -22,27 +22,27 @@ func _process(delta: float) -> void:
 	#pass
 
 func _input(event):
-	if event.is_action_pressed("grab"):
-		numRotations = int(rotation_degrees) / 360
-		
-		if (holdingItem):
-			_throw_item()
-		else:
-			_grab_ingredient()
-			
-
-func _throw_item():
 	numRotations = int(rotation_degrees) / 360
+	
+	if event.is_action_pressed("grab"):
+		if (!holdingItem):
+			_grab_ingredient(numRotations)
+			
+	if event.is_action_pressed("throw"):
+		if (holdingItem):
+			_throw_item(numRotations)
+			
+	if event.is_action_pressed("trash"):
+		if (holdingItem):
+			_trash_item(numRotations)
+
+func _throw_item(numRotations : int):
 	if (rotation_degrees >= (-18 + (360 * numRotations))) && (rotation_degrees <= (18 + (360 * numRotations))):
 		$%bear.play("throw")
 		throw.emit()
-		holdingItem = false
-		holdingTomato = false
-		holdingCheese = false
-		holdingPepperoni = false
-		holdingSausage = false
+		_clear_inventory()
 
-func _grab_ingredient() -> void:
+func _grab_ingredient(numRotations : int) -> void:
 	#grab sauce
 			if (rotation_degrees >= (90 + (360 * numRotations))) && (rotation_degrees <= (125 + (360 * numRotations))):
 				if (!holdingItem):
@@ -82,6 +82,11 @@ func _grab_ingredient() -> void:
 					holdingItem = true
 					$%bear.play("pickUp")
 
+func _trash_item(numRotations : int):
+	if (rotation_degrees >= (300 + (360 * numRotations))) && (rotation_degrees <= (335 + (360 * numRotations))):
+		$%bear.play("throw")
+		_clear_inventory()
+		print("trashed item")
 
 # check if holding item
 func _is_holding_tomato() -> bool:
@@ -95,3 +100,12 @@ func _is_holding_pepperoni() -> bool:
 
 func _is_holding_sausage() -> bool:
 	return holdingSausage
+
+
+# get rid of what you're holding
+func _clear_inventory():
+	holdingItem = false
+	holdingTomato = false
+	holdingCheese = false
+	holdingPepperoni = false
+	holdingSausage = false

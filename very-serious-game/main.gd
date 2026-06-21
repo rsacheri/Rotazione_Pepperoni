@@ -3,7 +3,8 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print("changes saved")
+	# print("changes saved")
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -14,8 +15,6 @@ func _process(delta: float) -> void:
 
 
 func _on_bear_throw() -> void:
-	
-	
 	if($%bear._is_holding_tomato()):
 		$pizza._add_sauce()
 	elif($%bear._is_holding_cheese()):
