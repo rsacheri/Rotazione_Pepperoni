@@ -1,4 +1,4 @@
-extends Control
+extends Node
 
 
 # Called when the node enters the scene tree for the first time.
@@ -12,8 +12,7 @@ func _process(delta: float) -> void:
 	pass
 
 
-
-
+# throw ingredient onto pizza
 func _on_bear_throw() -> void:
 	if($%bear._is_holding_tomato()):
 		$pizza._add_sauce()

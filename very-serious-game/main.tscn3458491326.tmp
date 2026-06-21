@@ -19,6 +19,12 @@ texture = ExtResource("1_h2yge")
 unique_name_in_owner = true
 position = Vector2(642, 366)
 scale = Vector2(0.3, 0.3)
+numRotations = null
+holdingItem = null
+holdingTomato = null
+holdingCheese = null
+holdingPepperoni = null
+holdingSausage = null
 
 [node name="pizza" parent="." unique_id=1429048440 instance=ExtResource("2_0xm2m")]
 unique_name_in_owner = true

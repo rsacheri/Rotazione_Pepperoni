@@ -7,7 +7,6 @@ func _ready() -> void:
 	$%cheese.hide()
 	$%pepperoni.hide()
 	$%sausage.hide()
-	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
