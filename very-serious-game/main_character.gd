@@ -28,7 +28,22 @@ func _input(event):
 		if (holdingItem):
 			_throw_item()
 		else:
-			#grab sauce
+			_grab_ingredient()
+			
+
+func _throw_item():
+	numRotations = int(rotation_degrees) / 360
+	if (rotation_degrees >= (-18 + (360 * numRotations))) && (rotation_degrees <= (18 + (360 * numRotations))):
+		$%bear.play("throw")
+		throw.emit()
+		holdingItem = false
+		holdingTomato = false
+		holdingCheese = false
+		holdingPepperoni = false
+		holdingSausage = false
+
+func _grab_ingredient() -> void:
+	#grab sauce
 			if (rotation_degrees >= (90 + (360 * numRotations))) && (rotation_degrees <= (125 + (360 * numRotations))):
 				if (!holdingItem):
 					print("grabbed sauce!")
@@ -67,15 +82,6 @@ func _input(event):
 					holdingItem = true
 					$%bear.play("pickUp")
 
-func _throw_item():
-	if (rotation_degrees >= (-18 + (360 * numRotations))) && (rotation_degrees <= (18 + (360 * numRotations))):
-		$%bear.play("throw")
-		throw.emit()
-		holdingItem = false
-		holdingTomato = false
-		holdingCheese = false
-		holdingPepperoni = false
-		holdingSausage = false
 
 # check if holding item
 func _is_holding_tomato() -> bool:
