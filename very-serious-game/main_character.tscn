@@ -16,23 +16,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_uvl38")
+"texture": ExtResource("3_2q423")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_2q423")
+"texture": ExtResource("2_uvl38")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"pickUp",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_uvl38")
+"texture": ExtResource("3_2q423")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_2q423")
+"texture": ExtResource("2_uvl38")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"throw",
 "speed": 5.0
 }]
@@ -40,8 +40,6 @@ animations = [{
 [node name="Node2D" type="Node2D" unique_id=122431385]
 script = ExtResource("1_wmkwl")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1225846855]
+[node name="bear" type="AnimatedSprite2D" parent="." unique_id=1225846855]
+unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_lmfss")
-animation = &"pickUp"
-frame = 1
-frame_progress = 0.14351836
