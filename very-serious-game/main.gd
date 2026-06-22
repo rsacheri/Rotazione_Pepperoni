@@ -6,7 +6,6 @@ var pizza_object
 var numIngredients = 1
 
 signal newOrder
-signal correctIngredient
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,7 +18,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
+#################################################
+# 					throw 
+#################################################
 # throw ingredient onto pizza
 func _on_bear_throw() -> void:
 	if($%bear._is_holding_tomato()):
@@ -37,7 +38,6 @@ func _on_bear_throw() -> void:
 	elif($%bear._is_holding_pineapple()):
 		_throw_and_clear()
 		pizza_object._add_pineapple()
-
 
 # throw animation and clear inventory
 func _throw_and_clear():

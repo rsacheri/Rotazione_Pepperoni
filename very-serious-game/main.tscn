@@ -73,8 +73,8 @@ theme_override_font_sizes/font_size = 40
 script = ExtResource("7_272bh")
 
 [connection signal="newOrder" from="." to="UI/scoreLabel" method="_on_main_new_order"]
-[connection signal="newOrder" from="." to="UI/orderLabel" method="_on_main_new_order"]
 [connection signal="newOrder" from="." to="UI/ordersCompleteLabel" method="_on_main_new_order"]
+[connection signal="newOrder" from="." to="UI/orderLabel" method="_on_main_new_order"]
 [connection signal="grab" from="bear" to="." method="_on_bear_grab"]
 [connection signal="grab" from="bear" to="UI/scoreLabel" method="_on_bear_grab"]
 [connection signal="throw" from="bear" to="." method="_on_bear_throw"]
