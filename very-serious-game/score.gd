@@ -6,11 +6,6 @@ extends Label
 func _ready() -> void:
 	pass
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
+# display score text
 func _on_main_new_order() -> void:
 	text = "Score: %s" % Global.score

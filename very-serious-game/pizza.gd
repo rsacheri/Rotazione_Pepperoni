@@ -14,8 +14,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
-# add toppings
+############################################################
+# 						add toppings 
+############################################################
 func _add_sauce():
 	$%tomato.show()
 
@@ -32,17 +33,9 @@ func _add_pineapple():
 	$%pineapple.show()
 
 
+# check what's on the pizza
 func _check_toppings():
 	var toppings = []
-	
-	#ingredients_copy = ingredients_copy.filter(func(ingredient_name : Sprite2D):
-		#return ingredient_name.isVisisble()
-		#)
-	#
-	#return ingredients_copy
-	#
-	#for x in Global.ingredients:
-		#pass
 		
 	if ($%tomato.visible):
 		toppings.append("tomato")

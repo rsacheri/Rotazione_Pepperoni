@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://ttvhmysaaa06"]
 
-[ext_resource type="Texture2D" uid="uid://b8vsfpdm3m5ax" path="res://main_wip.png" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://cv48hy1rj3bwi" path="res://main_character.tscn" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://d3xik6q3e5fd8" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://81653nsgfwny" path="res://pizza.tscn" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://c7gj0ja7egaw7" path="res://art/main/Workspace_w_Conveyor_CONCEPT.png" id="3_5vw27"]
 [ext_resource type="PackedScene" uid="uid://cuqf8cwomeyl3" path="res://tomato.tscn" id="3_h2yge"]
 [ext_resource type="Script" uid="uid://bjqe8btiapdiq" path="res://score.gd" id="6_7mycd"]
 [ext_resource type="Script" uid="uid://dky2k2kausfoq" path="res://orders_complete_label.gd" id="7_5vw27"]
@@ -16,17 +16,17 @@ pizza_scene = ExtResource("2_0xm2m")
 [node name="background" type="TextureRect" parent="." unique_id=1633162542]
 offset_right = 1280.0
 offset_bottom = 720.0
-texture = ExtResource("1_h2yge")
+texture = ExtResource("3_5vw27")
 
 [node name="bear" parent="." unique_id=122431385 instance=ExtResource("1_ig7tw")]
 unique_name_in_owner = true
-position = Vector2(642, 366)
+position = Vector2(625, 432.00003)
 scale = Vector2(0.3, 0.3)
 
 [node name="pizza" parent="." unique_id=1429048440 instance=ExtResource("2_0xm2m")]
 unique_name_in_owner = true
 visible = false
-position = Vector2(640, 170)
+position = Vector2(620, 170)
 
 [node name="tomato" parent="." unique_id=1839137245 instance=ExtResource("3_h2yge")]
 visible = false
@@ -70,6 +70,7 @@ offset_right = 40.0
 offset_bottom = 23.0
 theme_override_colors/font_color = Color(0.27450982, 0.18039216, 0.18039216, 1)
 theme_override_font_sizes/font_size = 40
+text = "cheese "
 script = ExtResource("7_272bh")
 
 [connection signal="newOrder" from="." to="UI/scoreLabel" method="_on_main_new_order"]

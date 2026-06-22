@@ -18,9 +18,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-#################################################
-# 					throw 
-#################################################
+############################################################
+# 							throw 
+############################################################
 # throw ingredient onto pizza
 func _on_bear_throw() -> void:
 	if($%bear._is_holding_tomato()):
@@ -45,6 +45,10 @@ func _throw_and_clear():
 	$%bear._clear_inventory()
 
 
+############################################################
+# 						check/verify 
+############################################################
+
 # check if ingredient bear is holding
 # is one of the needed ingredients (no duplicated allowed)
 func _check_ingredient():
@@ -54,7 +58,6 @@ func _check_ingredient():
 		if (x == heldIngredient):
 			Global.orderCopy.remove_at(int(x))
 			return true
-
 
 # returns true if built pizza matches order
 func _check_order() -> bool:
@@ -74,6 +77,9 @@ func _check_order() -> bool:
 	return false
 
 
+############################################################
+# 							order 
+############################################################
 # generate order
 func _generate_order(num_ingredients : int):	
 	Global.order.clear()
@@ -98,7 +104,6 @@ func _generate_order(num_ingredients : int):
 	
 	newOrder.emit()
 
-
 # generate a new order
 func _new_order(numIngredients : int):
 	await wait(0.75)
@@ -107,15 +112,17 @@ func _new_order(numIngredients : int):
 	
 	add_child(pizza_object)
 	
-	pizza_object.position = Vector2(640, 170)
+	pizza_object.position = Vector2(620, 170)
 	
 	_generate_order(numIngredients)
 
 
+############################################################
+# 					general features 
+############################################################
 # wait function
 func wait(seconds: float) -> void:
 	await get_tree().create_timer(seconds).timeout
-
 
 # button presses
 func _input(event):
@@ -141,7 +148,7 @@ func _input(event):
 			pizza_object.queue_free()
 			_new_order(numIngredients)
 
-
+# grabbing ingredients
 func _on_bear_grab() -> void:
 	if (_check_ingredient()):
 		$%bear._increase_temp_score(1)

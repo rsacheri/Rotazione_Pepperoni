@@ -10,6 +10,8 @@ extends Node2D
 @export var holdingSausage = false
 @export var holdingPineapple = false
 
+@export var spinSpeed = 2
+
 signal grab
 signal throw
 
@@ -20,7 +22,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	rotation += 2 * delta	
+	rotation += spinSpeed * delta	#s spin to win
 	#print(rotation_degrees)
 	#pass
 
@@ -42,15 +44,23 @@ func _input(event):
 			_trash_item(numRotations)
 
 
+############################################################
+# 							throw 
+############################################################
+# throw item
 func _throw_item(numRotations : int):
 	if (rotation_degrees >= (-18 + (360 * numRotations))) && (rotation_degrees <= (18 + (360 * numRotations))):
 		throw.emit()
 
-
+# throw animation
 func _throw_animation():
 	$%bear.play("throw")
 
 
+############################################################
+# 							grab 
+############################################################
+# grab ingredient
 func _grab_ingredient_selection(numRotations : int) -> void:
 	if (!holdingItem):
 		#grab sauce
@@ -73,6 +83,10 @@ func _grab_ingredient_selection(numRotations : int) -> void:
 		if (rotation_degrees >= (234 + (360 * numRotations))) && (rotation_degrees <= (270 + (360 * numRotations))):
 			_grab_pineapple()
 
+
+############################################################
+# 					grab ingredients 
+############################################################
 func _grab_tomato():
 	print("grabbed sauce!")
 	holdingItem = true
@@ -147,8 +161,10 @@ func _trash_item(numRotations : int):
 		_clear_inventory()
 		print("trashed item")
 
-
-# check if holding item
+############################################################
+# 					inventory management
+############################################################
+# check if holding item 
 func _is_holding_tomato() -> bool:
 	return holdingTomato
 
@@ -164,10 +180,8 @@ func _is_holding_sausage() -> bool:
 func _is_holding_pineapple() -> bool:
 	return holdingPineapple
 
-
 func _get_num_rotations():
 	return numRotations
-
 
 # get rid of what you're holding
 func _clear_inventory():
@@ -178,7 +192,7 @@ func _clear_inventory():
 	holdingSausage = false
 	holdingPineapple = false
 
-
+# check what item you're holding
 func _check_inventory():
 	if holdingTomato:
 		return "tomato"

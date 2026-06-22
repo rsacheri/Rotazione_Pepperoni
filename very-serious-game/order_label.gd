@@ -11,8 +11,8 @@ func _process(delta: float) -> void:
 	pass
 
 
+# display the order text
 func _on_main_new_order() -> void:
-	# text = "%s\n%s\n%s" % Global.order[0], Global.order[1], Global.order[2]
 	text = "%s" % _array_to_string(Global.order)
 
 
