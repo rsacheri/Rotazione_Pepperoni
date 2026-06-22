@@ -24,7 +24,7 @@ scale = Vector2(0.3, 0.3)
 [node name="pizza" parent="." unique_id=1429048440 instance=ExtResource("2_0xm2m")]
 unique_name_in_owner = true
 visible = false
-position = Vector2(640, 170)
+position = Vector2(640, 171)
 
 [node name="tomato" parent="." unique_id=1839137245 instance=ExtResource("3_h2yge")]
 visible = false

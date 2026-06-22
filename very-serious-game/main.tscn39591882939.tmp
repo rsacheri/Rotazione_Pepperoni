@@ -24,7 +24,7 @@ scale = Vector2(0.3, 0.3)
 [node name="pizza" parent="." unique_id=1429048440 instance=ExtResource("2_0xm2m")]
 unique_name_in_owner = true
 visible = false
-position = Vector2(640, 170)
+position = Vector2(640, 171)
 
 [node name="tomato" parent="." unique_id=1839137245 instance=ExtResource("3_h2yge")]
 visible = false
@@ -48,6 +48,9 @@ theme_override_colors/font_color = Color(0.27105352, 0.17654923, 0.17691517, 1)
 theme_override_font_sizes/font_size = 32
 text = "Score: 0"
 script = ExtResource("6_7mycd")
+
+[node name="pizzaTimer" type="Timer" parent="." unique_id=1882189349]
+wait_time = 2.0
 
 [connection signal="grab" from="bear" to="." method="_on_bear_grab"]
 [connection signal="grab" from="bear" to="UI/scoreLabel" method="_on_bear_grab"]

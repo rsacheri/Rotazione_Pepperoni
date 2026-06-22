@@ -108,6 +108,7 @@ func _grab_sausage():
 func _grab_pineapple():
 	print("grabbed pineapple!")
 	holdingItem = true
+	holdingPineapple = true
 	$%bear.play("pickUp")
 	Global.score += 1
 	grab.emit()
