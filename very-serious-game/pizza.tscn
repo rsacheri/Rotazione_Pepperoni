@@ -9,7 +9,7 @@ script = ExtResource("1_i514n")
 [node name="pizzaBase" type="Sprite2D" parent="." unique_id=321619430]
 texture = ExtResource("1_5birb")
 
-[node name="sauce" type="Sprite2D" parent="pizzaBase" unique_id=72459861]
+[node name="tomato" type="Sprite2D" parent="pizzaBase" unique_id=72459861]
 unique_name_in_owner = true
 modulate = Color(1, 0.023529412, 0.078431375, 1)
 scale = Vector2(0.8977778, 0.8977778)
@@ -36,5 +36,5 @@ texture = ExtResource("1_5birb")
 [node name="pineapple" type="Sprite2D" parent="pizzaBase" unique_id=2063888434]
 unique_name_in_owner = true
 modulate = Color(0.90379125, 0.8059084, 0.24728593, 1)
-scale = Vector2(0.64000005, 0.64000005)
+scale = Vector2(0.5777778, 0.5777778)
 texture = ExtResource("1_5birb")

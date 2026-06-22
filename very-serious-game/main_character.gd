@@ -31,7 +31,7 @@ func _input(event):
 	
 	if event.is_action_pressed("grab"):
 		if (!holdingItem):
-			_grab_ingredient(numRotations)
+			_grab_ingredient_selection(numRotations)
 			
 	if event.is_action_pressed("throw"):
 		if (holdingItem):
@@ -44,36 +44,34 @@ func _input(event):
 
 func _throw_item(numRotations : int):
 	if (rotation_degrees >= (-18 + (360 * numRotations))) && (rotation_degrees <= (18 + (360 * numRotations))):
-		$%bear.play("throw")
 		throw.emit()
-		_clear_inventory()
 
 
-func _grab_ingredient(numRotations : int) -> void:
-	#grab sauce
-	if (rotation_degrees >= (90 + (360 * numRotations))) && (rotation_degrees <= (125 + (360 * numRotations))):
-		if (!holdingItem):
-			pass
-	
-	#grab cheese
-	if (rotation_degrees >= (126 + (360 * numRotations))) && (rotation_degrees <= (161 + (360 * numRotations))):
-		if (!holdingItem):
-			pass
-	
-	# grab pepperoni
-	if (rotation_degrees >= (162 + (360 * numRotations))) && (rotation_degrees <= (197 + (360 * numRotations))):
-		if (!holdingItem):
-			pass
-	
-	# grab sausage
-	if (rotation_degrees >= (198 + (360 * numRotations))) && (rotation_degrees <= (233 + (360 * numRotations))):
-		if (!holdingItem):
-			pass
-	
-	# grab ???
-	if (rotation_degrees >= (234 + (360 * numRotations))) && (rotation_degrees <= (270 + (360 * numRotations))):
-		if (!holdingItem):
-			pass
+func _throw_animation():
+	$%bear.play("throw")
+
+
+func _grab_ingredient_selection(numRotations : int) -> void:
+	if (!holdingItem):
+		#grab sauce
+		if (rotation_degrees >= (90 + (360 * numRotations))) && (rotation_degrees <= (125 + (360 * numRotations))):
+			_grab_tomato()
+		
+		#grab cheese
+		if (rotation_degrees >= (126 + (360 * numRotations))) && (rotation_degrees <= (161 + (360 * numRotations))):
+			_grab_cheese()
+		
+		# grab pepperoni
+		if (rotation_degrees >= (162 + (360 * numRotations))) && (rotation_degrees <= (197 + (360 * numRotations))):
+			_grab_pep()
+		
+		# grab sausage
+		if (rotation_degrees >= (198 + (360 * numRotations))) && (rotation_degrees <= (233 + (360 * numRotations))):
+			_grab_sausage()
+		
+		# grab pineapple
+		if (rotation_degrees >= (234 + (360 * numRotations))) && (rotation_degrees <= (270 + (360 * numRotations))):
+			_grab_pineapple()
 
 func _grab_tomato():
 	print("grabbed sauce!")
@@ -81,7 +79,6 @@ func _grab_tomato():
 	holdingTomato = true
 	$%bear.play("pickUp")
 	Global.score += 1
-	print(Global.score)
 	grab.emit()
 
 func _grab_cheese():
@@ -117,17 +114,19 @@ func _grab_pineapple():
 
 
 #func _grab_ingredient(numRotations : int) -> void:
-	#var ingredients = ["sauce", "cheese", "pep", "sausage", "mush"]
+	#var ingredients = ["sauce", "cheese", "pepperoni", "sausage", "pineapple"]
 	#
 	#var table_start = 90
 	#var table_end = 270
 	#
 	#var section_deg = (table_end - table_start) / (ingredients.size())
 	#
-	#if ((rotation_degrees <= table_start) || (rotation_degrees >= table_end)):
+	#var curr_angle = fmod(rotation_degrees, 360)
+	#
+	#if ((curr_angle <= table_start) || (curr_angle >= table_end)):
 		#return
 	#
-	#var table_angle = rotation_degrees - table_start
+	#var table_angle = curr_angle - table_start
 	#
 	#var section_id = floor(table_angle / section_deg)
 	#
@@ -174,3 +173,16 @@ func _clear_inventory():
 	holdingPepperoni = false
 	holdingSausage = false
 	holdingPineapple = false
+
+
+func _check_inventory():
+	if holdingTomato:
+		return "tomato"
+	elif holdingCheese:
+		return "cheese"
+	elif holdingPepperoni:
+		return "pepperoni"
+	elif holdingSausage:
+		return "sausage"
+	elif holdingPineapple:
+		return "pineapple"
