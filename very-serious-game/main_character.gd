@@ -78,7 +78,6 @@ func _grab_tomato():
 	holdingItem = true
 	holdingTomato = true
 	$%bear.play("pickUp")
-	Global.score += 1
 	grab.emit()
 
 func _grab_cheese():
@@ -86,7 +85,6 @@ func _grab_cheese():
 	holdingItem = true
 	holdingCheese = true
 	$%bear.play("pickUp")
-	Global.score += 1
 	grab.emit()
 
 func _grab_pep():
@@ -94,7 +92,6 @@ func _grab_pep():
 	holdingItem = true
 	holdingPepperoni = true
 	$%bear.play("pickUp")
-	Global.score += 1
 	grab.emit()
 
 func _grab_sausage():
@@ -102,7 +99,6 @@ func _grab_sausage():
 	holdingItem = true
 	holdingSausage = true
 	$%bear.play("pickUp")
-	Global.score += 1
 	grab.emit()
 
 func _grab_pineapple():
@@ -110,8 +106,11 @@ func _grab_pineapple():
 	holdingItem = true
 	holdingPineapple = true
 	$%bear.play("pickUp")
-	Global.score += 1
 	grab.emit()
+
+
+func _increase_temp_score(n : int):
+	Global.tempScore += n
 
 
 #func _grab_ingredient(numRotations : int) -> void:
@@ -164,6 +163,10 @@ func _is_holding_sausage() -> bool:
 
 func _is_holding_pineapple() -> bool:
 	return holdingPineapple
+
+
+func _get_num_rotations():
+	return numRotations
 
 
 # get rid of what you're holding

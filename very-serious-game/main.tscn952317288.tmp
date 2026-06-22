@@ -6,8 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://81653nsgfwny" path="res://pizza.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://cuqf8cwomeyl3" path="res://tomato.tscn" id="3_h2yge"]
 [ext_resource type="Script" uid="uid://bjqe8btiapdiq" path="res://score.gd" id="6_7mycd"]
-[ext_resource type="Script" uid="uid://dky2k2kausfoq" path="res://orders_complete_label.gd" id="7_5vw27"]
-[ext_resource type="Script" uid="uid://dki14hppve2yp" path="res://order_label.gd" id="7_272bh"]
 
 [node name="main" type="Node" unique_id=1499929667]
 script = ExtResource("1_lquwl")
@@ -44,37 +42,13 @@ offset_bottom = 70.0
 
 [node name="scoreLabel" type="Label" parent="UI" unique_id=306874708]
 layout_mode = 0
-offset_left = 934.0
-offset_top = -4.0
-offset_right = 1055.0
-offset_bottom = 41.0
+offset_right = 40.0
+offset_bottom = 23.0
 theme_override_colors/font_color = Color(0.27105352, 0.17654923, 0.17691517, 1)
 theme_override_font_sizes/font_size = 32
 text = "Score: 0"
 script = ExtResource("6_7mycd")
 
-[node name="ordersCompleteLabel" type="Label" parent="UI" unique_id=799972037]
-layout_mode = 0
-offset_left = 934.0
-offset_top = 45.0
-offset_right = 1254.0
-offset_bottom = 90.0
-theme_override_colors/font_color = Color(0.27105352, 0.17654923, 0.17691517, 1)
-theme_override_font_sizes/font_size = 32
-text = "Orders Completed: 0"
-script = ExtResource("7_5vw27")
-
-[node name="orderLabel" type="Label" parent="UI" unique_id=1984079768]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_colors/font_color = Color(0.27450982, 0.18039216, 0.18039216, 1)
-theme_override_font_sizes/font_size = 40
-script = ExtResource("7_272bh")
-
-[connection signal="newOrder" from="." to="UI/scoreLabel" method="_on_main_new_order"]
-[connection signal="newOrder" from="." to="UI/orderLabel" method="_on_main_new_order"]
-[connection signal="newOrder" from="." to="UI/ordersCompleteLabel" method="_on_main_new_order"]
 [connection signal="grab" from="bear" to="." method="_on_bear_grab"]
 [connection signal="grab" from="bear" to="UI/scoreLabel" method="_on_bear_grab"]
 [connection signal="throw" from="bear" to="." method="_on_bear_throw"]

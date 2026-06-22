@@ -2,14 +2,11 @@ extends Node
 
 @export var pizza_scene: PackedScene
 
-#var selected_ingredients = []
-#var first_ingredient = ""
-#var second_ingredient = ""
-#var third_ingredient = ""
-
 var pizza_object
-var numIngredients = 2
+var numIngredients = 1
 
+signal newOrder
+signal correctIngredient
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -48,13 +45,14 @@ func _throw_and_clear():
 	$%bear._clear_inventory()
 
 
-# what does this even do?
+# check if ingredient bear is holding
+# is one of the needed ingredients (no duplicated allowed)
 func _check_ingredient():
 	var heldIngredient = $%bear._check_inventory()
 	
-	for x in Global.order:
+	for x in Global.orderCopy:
 		if (x == heldIngredient):
-			Global.order.remove_at(int(x))
+			Global.orderCopy.remove_at(int(x))
 			return true
 
 
@@ -70,7 +68,8 @@ func _check_order() -> bool:
 			if (order == Global.order):
 				return true
 	else:
-		wait(0.25)
+		# await wait(0.25)
+		pass
 	
 	return false
 
@@ -92,8 +91,12 @@ func _generate_order(num_ingredients : int):
 		ingredients_copy.remove_at(randInt)
 		i += 1
 	
+	Global.orderCopy = Global.order.duplicate(true) 
+	
 	for x in Global.order:
 		print(x)
+	
+	newOrder.emit()
 
 
 # generate a new order
@@ -119,16 +122,26 @@ func _input(event):
 	var orderCompleted
 	
 	# submit order
-	if event.is_action_pressed("submit"):
-		orderCompleted = _check_order()
-		if (orderCompleted):
-			print("order complete!")
-		else:
-			print("wrong order")
-		_new_order(numIngredients)
+	if event.is_action_pressed("submit") && (pizza_object != null):
+		if ($%bear.rotation_degrees >= (19 + (360 * $%bear._get_num_rotations()))) && ($%bear.rotation_degrees <= (55 + (360 * $%bear._get_num_rotations()))):
+			orderCompleted = _check_order()
+			if (orderCompleted):
+				print("order complete!")
+				Global.numOrdersCompleted += 1
+				Global.score += Global.tempScore
+			else:
+				print("wrong order")
+			Global.tempScore = 0
+			pizza_object.queue_free()
+			_new_order(numIngredients)
 	
 	# throw out pizza
 	if event.is_action_pressed("trash_pizza"):
 		if (pizza_object != null):
 			pizza_object.queue_free()
 			_new_order(numIngredients)
+
+
+func _on_bear_grab() -> void:
+	if (_check_ingredient()):
+		$%bear._increase_temp_score(1)
