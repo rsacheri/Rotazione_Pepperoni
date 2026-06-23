@@ -1,40 +1,46 @@
 [gd_scene format=3 uid="uid://81653nsgfwny"]
 
-[ext_resource type="Texture2D" uid="uid://7vphnpbhyabu" path="res://pizza.png" id="1_5birb"]
 [ext_resource type="Script" uid="uid://dvhlwcw6kry6m" path="res://pizza.gd" id="1_i514n"]
+[ext_resource type="Texture2D" uid="uid://dus13ljwf7cbg" path="res://art/main/Pizza/Dough-layer.png" id="2_l3bwu"]
+[ext_resource type="Texture2D" uid="uid://ckmw3wrq8o4qq" path="res://art/main/Pizza/Sauce-layer.png" id="3_uepaw"]
+[ext_resource type="Texture2D" uid="uid://7wngeqdokc7y" path="res://art/main/Pizza/Cheese-layer.png" id="4_7y8rq"]
+[ext_resource type="Texture2D" uid="uid://d0d6jprnefslp" path="res://art/main/Pizza/Pep-layer.png" id="5_6tpeu"]
+[ext_resource type="Texture2D" uid="uid://cgru873l4yf7e" path="res://art/main/Pizza/Sausage-layer.png" id="6_jtg3u"]
+[ext_resource type="Texture2D" uid="uid://bqikwp4lnewxk" path="res://art/main/Pizza/Pineapple-layer.png" id="7_vm0ai"]
 
 [node name="pizza" type="Node2D" unique_id=1429048440]
 script = ExtResource("1_i514n")
 
 [node name="pizzaBase" type="Sprite2D" parent="." unique_id=321619430]
-texture = ExtResource("1_5birb")
+scale = Vector2(0.24655695, 0.24655695)
+texture = ExtResource("2_l3bwu")
 
 [node name="tomato" type="Sprite2D" parent="pizzaBase" unique_id=72459861]
 unique_name_in_owner = true
 modulate = Color(1, 0.023529412, 0.078431375, 1)
-scale = Vector2(0.8977778, 0.8977778)
-texture = ExtResource("1_5birb")
+scale = Vector2(1.0187504, 1.0171179)
+texture = ExtResource("3_uepaw")
 
 [node name="cheese" type="Sprite2D" parent="pizzaBase" unique_id=1876738781]
 unique_name_in_owner = true
 modulate = Color(1, 0.7529412, 0, 1)
-scale = Vector2(0.80600494, 0.80600494)
-texture = ExtResource("1_5birb")
+scale = Vector2(1.0222143, 1.0205761)
+texture = ExtResource("4_7y8rq")
 
 [node name="pepperoni" type="Sprite2D" parent="pizzaBase" unique_id=1684154032]
 unique_name_in_owner = true
 modulate = Color(1, 0.42352942, 0, 1)
-scale = Vector2(0.72, 0.72)
-texture = ExtResource("1_5birb")
+scale = Vector2(0.9930347, 0.9914433)
+texture = ExtResource("5_6tpeu")
 
 [node name="sausage" type="Sprite2D" parent="pizzaBase" unique_id=1997466432]
 unique_name_in_owner = true
 modulate = Color(0.25699043, 0.14035854, 1.2032687e-07, 1)
-scale = Vector2(0.64000005, 0.64000005)
-texture = ExtResource("1_5birb")
+scale = Vector2(1.0144942, 1.0128684)
+texture = ExtResource("6_jtg3u")
 
 [node name="pineapple" type="Sprite2D" parent="pizzaBase" unique_id=2063888434]
 unique_name_in_owner = true
 modulate = Color(0.90379125, 0.8059084, 0.24728593, 1)
-scale = Vector2(0.5777778, 0.5777778)
-texture = ExtResource("1_5birb")
+scale = Vector2(0.99312305, 0.99153143)
+texture = ExtResource("7_vm0ai")

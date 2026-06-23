@@ -26,15 +26,16 @@ scale = Vector2(0.3, 0.3)
 
 [node name="pizza2" parent="." unique_id=1267966234 instance=ExtResource("2_0xm2m")]
 visible = false
-position = Vector2(953, 163)
+position = Vector2(969, 192)
 
 [node name="pizza" parent="." unique_id=1429048440 instance=ExtResource("2_0xm2m")]
 unique_name_in_owner = true
-position = Vector2(620, 170)
+visible = false
+position = Vector2(635, 167)
 
 [node name="lives" parent="." unique_id=199487736 instance=ExtResource("5_kek77")]
 unique_name_in_owner = true
-position = Vector2(190.99998, 663)
+position = Vector2(187, 665.99994)
 scale = Vector2(0.18, 0.18)
 
 [node name="tomato" parent="." unique_id=1839137245 instance=ExtResource("3_h2yge")]

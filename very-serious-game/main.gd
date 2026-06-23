@@ -132,7 +132,7 @@ func _new_order():
 	
 	add_child(pizza_object)
 	
-	pizza_object.position = Vector2(620, 170)
+	pizza_object.position = Vector2(635, 167)
 	
 	_generate_order()
 
@@ -190,8 +190,8 @@ func wait(seconds: float) -> void:
 
 func _move_pizza():
 	var tween = create_tween()
-	pizza_object.position = Vector2(953, 163)
-	tween.tween_property(pizza_object, "position", Vector2(953, -125), 0.5)
+	pizza_object.position = Vector2(969, 192)
+	tween.tween_property(pizza_object, "position", Vector2(969, -125), 0.5)
 
 # button presses
 func _input(event):
