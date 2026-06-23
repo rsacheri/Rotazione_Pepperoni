@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://81653nsgfwny" path="res://pizza.tscn" id="2_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://c7gj0ja7egaw7" path="res://art/main/Workspace_w_Conveyor_CONCEPT.png" id="3_5vw27"]
 [ext_resource type="PackedScene" uid="uid://cuqf8cwomeyl3" path="res://tomato.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bcgg4axwb8xwi" path="res://lives.tscn" id="5_kek77"]
 [ext_resource type="Script" uid="uid://bjqe8btiapdiq" path="res://score.gd" id="6_7mycd"]
 [ext_resource type="Script" uid="uid://dky2k2kausfoq" path="res://orders_complete_label.gd" id="7_5vw27"]
 [ext_resource type="Script" uid="uid://dki14hppve2yp" path="res://order_label.gd" id="7_272bh"]
@@ -23,10 +24,18 @@ unique_name_in_owner = true
 position = Vector2(625, 432.00003)
 scale = Vector2(0.3, 0.3)
 
+[node name="pizza2" parent="." unique_id=1267966234 instance=ExtResource("2_0xm2m")]
+visible = false
+position = Vector2(953, 163)
+
 [node name="pizza" parent="." unique_id=1429048440 instance=ExtResource("2_0xm2m")]
 unique_name_in_owner = true
-visible = false
 position = Vector2(620, 170)
+
+[node name="lives" parent="." unique_id=199487736 instance=ExtResource("5_kek77")]
+unique_name_in_owner = true
+position = Vector2(190.99998, 663)
+scale = Vector2(0.18, 0.18)
 
 [node name="tomato" parent="." unique_id=1839137245 instance=ExtResource("3_h2yge")]
 visible = false

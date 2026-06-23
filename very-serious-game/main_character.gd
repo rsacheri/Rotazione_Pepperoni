@@ -10,19 +10,18 @@ extends Node2D
 @export var holdingSausage = false
 @export var holdingPineapple = false
 
-@export var spinSpeed = 2
-
 signal grab
 signal throw
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	_clear_inventory()
 	$%bear.play("default")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	rotation += 2 * delta	# spin to win
+	rotation += Global.spinSpeed * delta	# spin to win
 	#print(rotation_degrees)
 	#pass
 

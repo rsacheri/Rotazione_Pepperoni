@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bcgg4axwb8xwi"]
+
+[ext_resource type="Texture2D" uid="uid://d3g4m5hefmi2l" path="res://art/main/Lives/Lives/Three_hearts_in_box.png" id="1_e1v4y"]
+[ext_resource type="Script" uid="uid://w8xc7ypncvd8" path="res://lives.gd" id="1_oknbp"]
+[ext_resource type="Texture2D" uid="uid://bgceep0j7r8w4" path="res://art/main/Lives/Lives/Two_hearts_in_box.png" id="2_oknbp"]
+[ext_resource type="Texture2D" uid="uid://7ry48bxg0go3" path="res://art/main/Lives/Lives/One_heart_in_box.png" id="3_llwtm"]
+[ext_resource type="Texture2D" uid="uid://23o8m51kwotp" path="res://art/main/Lives/Lives/Empty box.png" id="4_toety"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lmfss"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_toety")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_llwtm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_oknbp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_e1v4y")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="lives" type="Node2D" unique_id=199487736]
+script = ExtResource("1_oknbp")
+
+[node name="livesSprite" type="AnimatedSprite2D" parent="." unique_id=942251690]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_lmfss")
+frame = 3
+frame_progress = 0.32195848
