@@ -23,6 +23,11 @@ func _process(delta: float) -> void:
 ############################################################
 # throw ingredient onto pizza
 func _on_bear_throw() -> void:
+	if (_check_ingredient_throw()):
+		print("Throw Score: ", Global.tempTempScore)
+		Global.tempScore += Global.tempTempScore
+		Global.tempTempScore = 0
+	
 	if($%bear._is_holding_tomato()):
 		_throw_and_clear()
 		pizza_object._add_sauce()
@@ -51,12 +56,22 @@ func _throw_and_clear():
 
 # check if ingredient bear is holding
 # is one of the needed ingredients (no duplicated allowed)
-func _check_ingredient():
+func _check_ingredient_throw():
 	var heldIngredient = $%bear._check_inventory()
 	
-	for x in Global.orderCopy:
+	for x in Global.orderCopyThrow:
 		if (x == heldIngredient):
-			Global.orderCopy.remove_at(int(x))
+			Global.orderCopyThrow.remove_at(int(x))
+			return true
+
+# check if ingredient bear is holding
+# is one of the needed ingredients (no duplicated allowed)
+func _check_ingredient_grab():
+	var heldIngredient = $%bear._check_inventory()
+	
+	for x in Global.orderCopyGrab:
+		if (x == heldIngredient):
+			Global.orderCopyGrab.remove_at(int(x))
 			return true
 
 # returns true if built pizza matches order
@@ -97,7 +112,8 @@ func _generate_order(num_ingredients : int):
 		ingredients_copy.remove_at(randInt)
 		i += 1
 	
-	Global.orderCopy = Global.order.duplicate(true) 
+	Global.orderCopyGrab = Global.order.duplicate(true) 
+	Global.orderCopyThrow = Global.order.duplicate(true) 
 	
 	for x in Global.order:
 		print(x)
@@ -150,5 +166,7 @@ func _input(event):
 
 # grabbing ingredients
 func _on_bear_grab() -> void:
-	if (_check_ingredient()):
-		$%bear._increase_temp_score(1)
+	if (_check_ingredient_grab()):
+		print("Grab Score: ", Global.tempTempScore)
+		$%bear._increase_temp_score()
+		Global.tempTempScore = 0

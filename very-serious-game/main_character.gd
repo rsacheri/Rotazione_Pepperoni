@@ -22,7 +22,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	rotation += spinSpeed * delta	#s spin to win
+	rotation += 2 * delta	# spin to win
 	#print(rotation_degrees)
 	#pass
 
@@ -49,7 +49,7 @@ func _input(event):
 ############################################################
 # throw item
 func _throw_item(numRotations : int):
-	if (rotation_degrees >= (-18 + (360 * numRotations))) && (rotation_degrees <= (18 + (360 * numRotations))):
+	if (rotation_degrees >= (342 + (360 * (numRotations - 1)))) && (rotation_degrees <= (18 + (360 * numRotations))):
 		throw.emit()
 
 # throw animation
@@ -65,23 +65,33 @@ func _grab_ingredient_selection(numRotations : int) -> void:
 	if (!holdingItem):
 		#grab sauce
 		if (rotation_degrees >= (90 + (360 * numRotations))) && (rotation_degrees <= (125 + (360 * numRotations))):
+			_grab_ingredient_score(numRotations)
 			_grab_tomato()
+			
 		
 		#grab cheese
 		if (rotation_degrees >= (126 + (360 * numRotations))) && (rotation_degrees <= (161 + (360 * numRotations))):
+			_grab_ingredient_score(numRotations)
 			_grab_cheese()
+			
 		
 		# grab pepperoni
 		if (rotation_degrees >= (162 + (360 * numRotations))) && (rotation_degrees <= (197 + (360 * numRotations))):
+			_grab_ingredient_score(numRotations)
 			_grab_pep()
+			
 		
 		# grab sausage
 		if (rotation_degrees >= (198 + (360 * numRotations))) && (rotation_degrees <= (233 + (360 * numRotations))):
+			_grab_ingredient_score(numRotations)
 			_grab_sausage()
+			
 		
 		# grab pineapple
 		if (rotation_degrees >= (234 + (360 * numRotations))) && (rotation_degrees <= (270 + (360 * numRotations))):
+			_grab_ingredient_score(numRotations)
 			_grab_pineapple()
+			
 
 
 ############################################################
@@ -123,37 +133,60 @@ func _grab_pineapple():
 	grab.emit()
 
 
-func _increase_temp_score(n : int):
-	Global.tempScore += n
+func _increase_temp_score():
+	Global.tempScore += Global.tempTempScore
 
 
-#func _grab_ingredient(numRotations : int) -> void:
-	#var ingredients = ["sauce", "cheese", "pepperoni", "sausage", "pineapple"]
-	#
-	#var table_start = 90
-	#var table_end = 270
-	#
-	#var section_deg = (table_end - table_start) / (ingredients.size())
-	#
-	#var curr_angle = fmod(rotation_degrees, 360)
-	#
-	#if ((curr_angle <= table_start) || (curr_angle >= table_end)):
-		#return
-	#
-	#var table_angle = curr_angle - table_start
-	#
-	#var section_id = floor(table_angle / section_deg)
-	#
-	#var score_val = 1 - abs((((table_angle / section_deg) - section_id) - 0.5) * 2)
-	#
-	#score_val *= 3
-	#
-	#if (score_val > 0.8):
-		#Global.score = 3
-	#elif (score_val > 0.5):
-		#Global.score = 2
-	#else:
-		#Global.score = 1
+func _grab_ingredient_score(numRotations : int) -> void:
+	var table_start = 90
+	var table_end = 270
+	
+	var section_deg = (table_end - table_start) / (Global.ingredients.size())
+	
+	var curr_angle = fmod(rotation_degrees, 360)
+	
+	if ((curr_angle <= table_start) || (curr_angle >= table_end)):
+		return
+	
+	var table_angle = curr_angle - table_start
+	
+	var section_id = floor(table_angle / section_deg)
+	
+	var score_val = 1 - abs((((table_angle / section_deg) - section_id) - 0.5) * 2)
+	
+	score_val *= 3
+	
+	Global.tempTempScore = 0
+	
+	if (score_val > 0.85):
+		Global.tempTempScore += 3
+	elif (score_val > 0.5):
+		Global.tempTempScore += 2
+	else:
+		Global.tempTempScore += 1
+
+func _throw_score(numRotations : int) -> void:
+	var curr_angle = fmod(rotation_degrees, 360)
+	
+	var table_start = -18
+	
+	var table_angle = curr_angle - table_start
+	
+	var section_id = floor(table_angle / 36)
+	
+	var score_val = 1 - abs((((table_angle / 36) - section_id) - 0.5) * 2)
+	
+	score_val *= 3
+	
+	Global.tempTempScore = 0
+	
+	if (score_val > 0.85):
+		Global.tempTempScore += 3
+	elif (score_val > 0.5):
+		Global.tempTempScore += 2
+	else:
+		Global.tempTempScore += 1
+
 
 func _trash_item(numRotations : int):
 	if (rotation_degrees >= (300 + (360 * numRotations))) && (rotation_degrees <= (335 + (360 * numRotations))):
