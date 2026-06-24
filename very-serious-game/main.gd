@@ -4,6 +4,8 @@ extends Node
 
 var pizza_object
 
+var currItemIndex
+
 signal newOrder
 
 # Called when the node enters the scene tree for the first time.
@@ -22,13 +24,14 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+
 ############################################################
 # 							throw 
 ############################################################
 # throw ingredient onto pizza
 func _on_bear_throw() -> void:
 	if (_check_ingredient_throw()):
-		print("Throw Score: ", Global.tempTempScore)
+		#print("Throw Score: ", Global.tempTempScore)
 		Global.tempScore += Global.tempTempScore
 		Global.tempTempScore = 0
 	
@@ -63,6 +66,15 @@ func _throw_and_clear():
 func _check_ingredient_throw():
 	var heldIngredient = $%bear._check_inventory()
 	
+	if (currItemIndex > Global.numIngredients):
+		return false
+	elif (heldIngredient == Global.order[currItemIndex]):
+		Global.score += Global.tempScore
+		currItemIndex += 1
+		return true
+	else:
+		return false
+	
 	for x in Global.orderCopyThrow:
 		if (x == heldIngredient):
 			Global.orderCopyThrow.remove_at(int(x))
@@ -73,9 +85,9 @@ func _check_ingredient_throw():
 func _check_ingredient_grab():
 	var heldIngredient = $%bear._check_inventory()
 	
-	for x in Global.orderCopyGrab:
+	for x in Global.orderCopyThrow:
 		if (x == heldIngredient):
-			Global.orderCopyGrab.remove_at(int(x))
+			# Global.orderCopyGrab.remove_at(int(x))
 			return true
 
 # returns true if built pizza matches order
@@ -102,6 +114,8 @@ func _check_order() -> bool:
 # generate order
 func _generate_order():	
 	Global.order.clear()
+	Global.orderCopyGrab.clear()
+	Global.orderCopyThrow.clear()
 	
 	var ingredients_copy = Global.ingredients.duplicate(true) 
 	
@@ -122,7 +136,7 @@ func _generate_order():
 	for x in Global.order:
 		print(x)
 	
-	newOrder.emit()
+	currItemIndex = 0
 
 # generate a new order
 func _new_order():
@@ -135,6 +149,10 @@ func _new_order():
 	pizza_object.position = Vector2(635, 167)
 	
 	_generate_order()
+	
+	newOrder.emit()
+	
+	Global.numSpins = 0
 
 
 ############################################################
@@ -160,6 +178,24 @@ func _lost_life():
 		Global.spinSpeed = 0
 		await wait(0.75)
 		Global.spinSpeed = temp
+		Global.tempScore = 0
+		Global.tempTempScore = 0
+		#_new_order()
+
+
+############################################################
+# 					number of spins 
+############################################################
+# count how many spins
+func _count_spins() -> void:
+	Global.numSpins = $%bear._get_num_rotations()
+
+# check if amount of spins is below the limit
+func _check_num_spins() -> bool:
+	if (Global.numSpins <= Global.numSpinsToWin):
+		return true
+	else:
+		return false
 
 
 ############################################################
@@ -171,14 +207,19 @@ func _increase_difficulty():
 		_incread_spin_speed()
 	if (Global.numOrdersCompleted % 10 == 0 && Global.numIngredients <= 5):
 		_increase_num_ingredients()
+	#if (Global.numOrdersCompleted % 15 == 0 && Global.numIngredients >= 3):
+		#_decrease_num_spins_to_win()
 
 # increase spin speed every 5 correct orders
 func _incread_spin_speed():
-	Global.spinSpeed += 0.33
+	Global.spinSpeed += 33
 
 # increase number of toppings
 func _increase_num_ingredients():
 	Global.numIngredients += 1
+
+func _decrease_num_spins_to_win():
+	Global.numSpinsMultiplier -= 1
 
 
 ############################################################
@@ -230,5 +271,12 @@ func _input(event):
 func _on_bear_grab() -> void:
 	if (_check_ingredient_grab()):
 		print("Grab Score: ", Global.tempTempScore)
-		$%bear._increase_temp_score()
-		Global.tempTempScore = 0
+		# $%bear._increase_temp_score()
+		# Global.tempTempScore = 0
+
+
+func _on_bear_spin() -> void:
+	if (!_check_num_spins()):
+		# $%bear._reset_rotation_degrees()
+		_lost_life()
+		Global.numSpins = 0

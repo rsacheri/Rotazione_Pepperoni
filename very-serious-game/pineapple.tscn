@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cxh7ctxsywvjw"]
+
+[ext_resource type="Texture2D" uid="uid://b08g33dbrloas" path="res://art/main/Whole Foods (not to be confused with the very expensive store)/Whole pineapple.png" id="1_h5nld"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_47bdn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_h5nld")
+}],
+"loop": 1,
+"name": &"whole",
+"speed": 5.0
+}]
+
+[node name="pineapple" type="Node2D" unique_id=1969231461]
+
+[node name="pineappleSprite" type="AnimatedSprite2D" parent="." unique_id=1119671519]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_47bdn")
+animation = &"whole"

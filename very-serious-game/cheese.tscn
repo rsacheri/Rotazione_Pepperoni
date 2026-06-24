@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b7pxnhlegmtqo"]
+
+[ext_resource type="Texture2D" uid="uid://n2a3jllkqr0d" path="res://art/main/Whole Foods (not to be confused with the very expensive store)/Whole_cheese.png" id="1_kw545"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lmfss"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kw545")
+}],
+"loop": 1,
+"name": &"whole",
+"speed": 5.0
+}]
+
+[node name="cheese" type="Node2D" unique_id=682771179]
+
+[node name="cheeseSprite" type="AnimatedSprite2D" parent="." unique_id=1817184635]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_lmfss")
+animation = &"whole"

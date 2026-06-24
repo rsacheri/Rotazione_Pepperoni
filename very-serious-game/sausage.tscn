@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://qjmr52u62n6e"]
+
+[ext_resource type="Texture2D" uid="uid://cm2pgb6447iav" path="res://art/main/Whole Foods (not to be confused with the very expensive store)/Whole_sausage.png" id="1_quh7t"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lmfss"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_quh7t")
+}],
+"loop": 1,
+"name": &"whole",
+"speed": 5.0
+}]
+
+[node name="sausage" type="Node2D" unique_id=277975591]
+
+[node name="sausageSprite" type="AnimatedSprite2D" parent="." unique_id=488072503]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_lmfss")
+animation = &"whole"

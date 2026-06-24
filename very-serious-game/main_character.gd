@@ -1,7 +1,5 @@
 extends Node2D
 
-@export var numRotations = 0
-
 @export var holdingItem = false
 
 @export var holdingTomato = false
@@ -10,8 +8,12 @@ extends Node2D
 @export var holdingSausage = false
 @export var holdingPineapple = false
 
+var rotationCompleted = false
+var previousRotation
+
 signal grab
 signal throw
+signal spin
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,35 +23,55 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	rotation += Global.spinSpeed * delta	# spin to win
+	previousRotation = rotation_degrees
+	
+	rotation_degrees += Global.spinSpeed * delta	# spin to win
+	rotation_degrees = fmod(rotation_degrees, 360)
+	
+	
+	if (previousRotation > rotation_degrees):
+		# print("spin")
+		print(Global.numSpins)
+		Global.numSpins += 1
+		spin.emit()
+	
+	#print(fmod(rotation_degrees, 360))
+	# if (is_equal_approx(fmod(rotation_degrees, 360), 0)):
+	# if (fmod(rotation_degrees, 360) == 0):
+	#if ((int)(rotation_degrees) % 360 == 0):
+		#print("spin")
+		#Global.numSpins = int(rotation_degrees) / 360
+		#spin.emit()
+		
 	#print(rotation_degrees)
 	#pass
 
 
 # on button press
 func _input(event):
-	numRotations = int(rotation_degrees) / 360
 	
 	if event.is_action_pressed("grab"):
 		if (!holdingItem):
-			_grab_ingredient_selection(numRotations)
+			_grab_ingredient_selection()
 			
 	if event.is_action_pressed("throw"):
 		if (holdingItem):
-			_throw_item(numRotations)
+			_throw_item()
+			
 			
 	if event.is_action_pressed("trash"):
 		if (holdingItem):
-			_trash_item(numRotations)
+			_trash_item()
 
 
 ############################################################
 # 							throw 
 ############################################################
 # throw item
-func _throw_item(numRotations : int):
-	if (rotation_degrees >= (342 + (360 * (numRotations - 1)))) && (rotation_degrees <= (18 + (360 * numRotations))):
+func _throw_item():
+	if (rotation_degrees >= 342) || (rotation_degrees <= 18):
 		throw.emit()
+		_throw_score()
 
 # throw animation
 func _throw_animation():
@@ -60,35 +82,35 @@ func _throw_animation():
 # 							grab 
 ############################################################
 # grab ingredient
-func _grab_ingredient_selection(numRotations : int) -> void:
+func _grab_ingredient_selection() -> void:
 	if (!holdingItem):
 		#grab sauce
-		if (rotation_degrees >= (90 + (360 * numRotations))) && (rotation_degrees <= (125 + (360 * numRotations))):
-			_grab_ingredient_score(numRotations)
+		if (rotation_degrees >= 90) && (rotation_degrees <= 125):
+			_grab_ingredient_score()
 			_grab_tomato()
 			
 		
 		#grab cheese
-		if (rotation_degrees >= (126 + (360 * numRotations))) && (rotation_degrees <= (161 + (360 * numRotations))):
-			_grab_ingredient_score(numRotations)
+		if (rotation_degrees >= 126) && (rotation_degrees <= 161):
+			_grab_ingredient_score()
 			_grab_cheese()
 			
 		
 		# grab pepperoni
-		if (rotation_degrees >= (162 + (360 * numRotations))) && (rotation_degrees <= (197 + (360 * numRotations))):
-			_grab_ingredient_score(numRotations)
+		if (rotation_degrees >= 162) && (rotation_degrees <= 197):
+			_grab_ingredient_score()
 			_grab_pep()
 			
 		
 		# grab sausage
-		if (rotation_degrees >= (198 + (360 * numRotations))) && (rotation_degrees <= (233 + (360 * numRotations))):
-			_grab_ingredient_score(numRotations)
+		if (rotation_degrees >= 198) && (rotation_degrees <= 233):
+			_grab_ingredient_score()
 			_grab_sausage()
 			
 		
 		# grab pineapple
-		if (rotation_degrees >= (234 + (360 * numRotations))) && (rotation_degrees <= (270 + (360 * numRotations))):
-			_grab_ingredient_score(numRotations)
+		if (rotation_degrees >= 234) && (rotation_degrees <= 270):
+			_grab_ingredient_score()
 			_grab_pineapple()
 			
 
@@ -136,7 +158,7 @@ func _increase_temp_score():
 	Global.tempScore += Global.tempTempScore
 
 
-func _grab_ingredient_score(numRotations : int) -> void:
+func _grab_ingredient_score() -> void:
 	var table_start = 90
 	var table_end = 270
 	
@@ -164,7 +186,7 @@ func _grab_ingredient_score(numRotations : int) -> void:
 	else:
 		Global.tempTempScore += 1
 
-func _throw_score(numRotations : int) -> void:
+func _throw_score() -> void:
 	var curr_angle = fmod(rotation_degrees, 360)
 	
 	var table_start = -18
@@ -177,20 +199,24 @@ func _throw_score(numRotations : int) -> void:
 	
 	score_val *= 3
 	
-	Global.tempTempScore = 0
+	# Global.tempTempScore = 0
 	
 	if (score_val > 0.85):
-		Global.tempTempScore += 3
+		Global.tempScore += 3
+		print("Throw Score: 3")
 	elif (score_val > 0.5):
-		Global.tempTempScore += 2
+		Global.tempScore += 2
+		print("Throw Score: 2")
 	else:
-		Global.tempTempScore += 1
+		Global.tempScore += 1
+		print("Throw Score: 1")
 
 
-func _trash_item(numRotations : int):
-	if (rotation_degrees >= (300 + (360 * numRotations))) && (rotation_degrees <= (335 + (360 * numRotations))):
+func _trash_item():
+	if (rotation_degrees >= 300) && (rotation_degrees <= 335):
 		$%bear.play("throw")
 		_clear_inventory()
+		Global.tempTempScore = 0
 		print("trashed item")
 
 ############################################################
@@ -212,8 +238,7 @@ func _is_holding_sausage() -> bool:
 func _is_holding_pineapple() -> bool:
 	return holdingPineapple
 
-func _get_num_rotations():
-	return numRotations
+
 
 # get rid of what you're holding
 func _clear_inventory():
@@ -236,3 +261,19 @@ func _check_inventory():
 		return "sausage"
 	elif holdingPineapple:
 		return "pineapple"
+
+
+############################################################
+# 							spin 
+############################################################
+# get number of rotations
+func _get_num_rotations():
+	return (int(rotation_degrees) / 360)
+
+# get rotation degree
+func _get_rotation_degrees() -> float:
+	return rotation_degrees
+
+# reset rotation degrees
+func _reset_rotation_degrees():
+	rotation_degrees = 0

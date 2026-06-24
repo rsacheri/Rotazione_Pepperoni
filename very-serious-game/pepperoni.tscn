@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dwwygowpswrsu"]
+
+[ext_resource type="Texture2D" uid="uid://bcf0xt7idkgyd" path="res://art/main/Whole Foods (not to be confused with the very expensive store)/Whole_pep.png" id="1_o5gsa"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lmfss"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_o5gsa")
+}],
+"loop": 1,
+"name": &"whole",
+"speed": 5.0
+}]
+
+[node name="pepperoni" type="Node2D" unique_id=1050781329]
+
+[node name="pepperoniSprite" type="AnimatedSprite2D" parent="." unique_id=14464265]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_lmfss")
+animation = &"whole"

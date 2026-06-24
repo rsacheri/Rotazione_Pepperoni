@@ -8,11 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bcgg4axwb8xwi" path="res://lives.tscn" id="5_kek77"]
 [ext_resource type="Script" uid="uid://bjqe8btiapdiq" path="res://score.gd" id="6_7mycd"]
 [ext_resource type="Script" uid="uid://dky2k2kausfoq" path="res://orders_complete_label.gd" id="7_5vw27"]
-[ext_resource type="Script" uid="uid://d23mgrptcexhg" path="res://progress_bar.gd" id="10_4c57u"]
-[ext_resource type="PackedScene" uid="uid://b7pxnhlegmtqo" path="res://cheese.tscn" id="11_w48qg"]
-[ext_resource type="PackedScene" uid="uid://qjmr52u62n6e" path="res://sausage.tscn" id="12_vivmo"]
-[ext_resource type="PackedScene" uid="uid://dwwygowpswrsu" path="res://pepperoni.tscn" id="13_2cqfq"]
-[ext_resource type="PackedScene" uid="uid://cxh7ctxsywvjw" path="res://pineapple.tscn" id="14_yaehf"]
+[ext_resource type="Script" uid="uid://dki14hppve2yp" path="res://order_label.gd" id="7_272bh"]
 
 [node name="main" type="Node" unique_id=1499929667]
 script = ExtResource("1_lquwl")
@@ -45,28 +41,8 @@ scale = Vector2(0.18, 0.18)
 [node name="tomato" parent="." unique_id=1839137245 instance=ExtResource("3_h2yge")]
 visible = false
 modulate = Color(1, 0.13725491, 0.14901961, 1)
-position = Vector2(928, 289)
-scale = Vector2(0.035, 0.035)
-
-[node name="cheese" parent="." unique_id=682771179 instance=ExtResource("11_w48qg")]
-visible = false
-position = Vector2(156, 7)
-scale = Vector2(0.035, 0.035)
-
-[node name="pepperoni" parent="." unique_id=1050781329 instance=ExtResource("13_2cqfq")]
-visible = false
-position = Vector2(156, 7)
-scale = Vector2(0.035, 0.035)
-
-[node name="sausage" parent="." unique_id=277975591 instance=ExtResource("12_vivmo")]
-visible = false
-position = Vector2(156, 7)
-scale = Vector2(0.035, 0.035)
-
-[node name="pineapple" parent="." unique_id=1969231461 instance=ExtResource("14_yaehf")]
-visible = false
-position = Vector2(156, 7)
-scale = Vector2(0.025, 0.025)
+position = Vector2(772, 282)
+scale = Vector2(0.235, 0.235)
 
 [node name="UI" type="Control" parent="." unique_id=1564899423]
 layout_mode = 3
@@ -98,17 +74,18 @@ theme_override_font_sizes/font_size = 32
 text = "Orders Completed: 0"
 script = ExtResource("7_5vw27")
 
-[node name="ProgressBar" type="ProgressBar" parent="UI" unique_id=1021710613]
+[node name="orderLabel" type="Label" parent="UI" unique_id=1984079768]
 layout_mode = 0
-offset_left = 47.0
-offset_top = 556.0
-offset_right = 211.0
-offset_bottom = 583.0
-max_value = 15.0
-script = ExtResource("10_4c57u")
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.27450982, 0.18039216, 0.18039216, 1)
+theme_override_font_sizes/font_size = 40
+text = "cheese "
+script = ExtResource("7_272bh")
 
 [connection signal="newOrder" from="." to="UI/scoreLabel" method="_on_main_new_order"]
 [connection signal="newOrder" from="." to="UI/ordersCompleteLabel" method="_on_main_new_order"]
+[connection signal="newOrder" from="." to="UI/orderLabel" method="_on_main_new_order"]
 [connection signal="grab" from="bear" to="." method="_on_bear_grab"]
 [connection signal="grab" from="bear" to="UI/scoreLabel" method="_on_bear_grab"]
 [connection signal="spin" from="bear" to="." method="_on_bear_spin"]

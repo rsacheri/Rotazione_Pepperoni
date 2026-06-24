@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cuqf8cwomeyl3"]
 
-[ext_resource type="Texture2D" uid="uid://7vphnpbhyabu" path="res://pizza.png" id="1_ajaoc"]
+[ext_resource type="Texture2D" uid="uid://5x5jbo4ffm30" path="res://art/main/Whole Foods (not to be confused with the very expensive store)/Whole_tomato.png" id="1_ajaoc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lmfss"]
 animations = [{
@@ -9,11 +9,15 @@ animations = [{
 "texture": ExtResource("1_ajaoc")
 }],
 "loop": 1,
-"name": &"default",
+"name": &"whole",
 "speed": 5.0
 }]
 
 [node name="tomato" type="Node2D" unique_id=1839137245]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=86093682]
+[node name="tomatoSprite" type="AnimatedSprite2D" parent="." unique_id=86093682]
+unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_lmfss")
+animation = &"whole"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1522815330]
