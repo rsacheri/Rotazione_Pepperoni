@@ -9,3 +9,4 @@ func _ready() -> void:
 # display score text
 func _on_main_new_order() -> void:
 	text = "Score: %s" % Global.score
+	print("from on main new order")

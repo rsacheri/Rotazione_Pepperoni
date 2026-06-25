@@ -21,8 +21,8 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+#func _process(delta: float) -> void:
+	#pass
 
 
 ############################################################
@@ -105,9 +105,14 @@ func _check_order() -> bool:
 		if (order != null):
 			if (order == Global.order):
 				return true
+			else:
+				print(Global.order)
+				print(order)
+				return false
 	else:
 		# await wait(0.25)
 		pass
+	
 	
 	return false
 
@@ -155,6 +160,9 @@ func _new_order():
 	_generate_order()
 	
 	newOrder.emit()
+	
+	$%scoreLabel._on_main_new_order()
+	$%ordersCompleteLabel._on_main_new_order()
 	
 	$%order/orderLabel._on_main_new_order()
 	$%order._match_order_to_picture()
@@ -238,8 +246,8 @@ func wait(seconds: float) -> void:
 
 func _move_pizza():
 	var tween = create_tween()
-	pizza_object.position = Vector2(969, 192)
-	tween.tween_property(pizza_object, "position", Vector2(969, -125), 0.5)
+	pizza_object.position = Vector2(938, 189)
+	tween.tween_property(pizza_object, "position", Vector2(938, -125), 0.5)
 
 # button presses
 func _input(event):
@@ -254,6 +262,10 @@ func _input(event):
 				print("order complete!")
 				Global.numOrdersCompleted += 1
 				Global.score += Global.tempScore
+				print("score: ")
+				print(Global.score)
+				print("tempScore: ")
+				print(Global.tempScore)
 				_increase_difficulty()
 			else:
 				print("wrong order")
@@ -261,6 +273,7 @@ func _input(event):
 			
 			await wait(0.75)
 			Global.tempScore = 0
+			Global.tempTempScore = 0
 			pizza_object.queue_free()
 			
 			if (Global.lives != 0):
@@ -286,4 +299,5 @@ func _on_bear_spin() -> void:
 	if (!_check_num_spins()):
 		# $%bear._reset_rotation_degrees()
 		_lost_life()
+		_new_order()
 		Global.numSpins = 0

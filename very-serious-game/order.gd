@@ -24,31 +24,28 @@ func _hide_ingredients():
 func _match_order_to_picture():
 	_hide_ingredients()
 	
-	var index = 0
-	
-	print("")
+	#print("")
 	
 	for i in Global.order:
 		if (i == "tomato"):
-			print("tomato")
+			#print("tomato")
 			#$%VBoxContainer.move_child($%VBoxContainer.get_child(0), index)
 			$%tomato.move_to_front()
 			$%tomato.visible = true
 		elif (i == "cheese"):
-			print("cheese")
+			#print("cheese")
 			$%cheese.move_to_front()
 			$%cheese.visible = true
 		elif (i == "pepperoni"):
-			print("pepperoni")
+			#print("pepperoni")
 			$%pepperoni.move_to_front()
 			$%pepperoni.visible = true
 		elif (i == "sausage"):
-			print("sausage")
+			#print("sausage")
 			$%sausage.move_to_front()
 			$%sausage.visible = true
 		elif (i == "pineapple"):
-			print("pineapple")
+			#print("pineapple")
 			$%pineapple.move_to_front()
 			$%pineapple.visible = true
-		index += 1
 	

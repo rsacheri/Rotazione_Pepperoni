@@ -24,7 +24,7 @@ var orderCopyThrow = []
 # reset values for retry
 func _set_initial_values():
 	spinSpeed = 100.0
-	numIngredients = 3
+	numIngredients = 1
 	numSpinsMultiplier = 5
 	
 	numSpins = 0

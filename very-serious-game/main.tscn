@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://cv48hy1rj3bwi" path="res://main_character.tscn" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://d3xik6q3e5fd8" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://81653nsgfwny" path="res://pizza.tscn" id="2_0xm2m"]
-[ext_resource type="Texture2D" uid="uid://c7gj0ja7egaw7" path="res://art/main/Workspace_w_Conveyor_CONCEPT.png" id="3_5vw27"]
 [ext_resource type="PackedScene" uid="uid://cuqf8cwomeyl3" path="res://tomato.tscn" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://b55eo7ngujpte" path="res://art/main/Workspace final.png" id="3_vivmo"]
 [ext_resource type="PackedScene" uid="uid://bcgg4axwb8xwi" path="res://lives.tscn" id="5_kek77"]
 [ext_resource type="Script" uid="uid://bjqe8btiapdiq" path="res://score.gd" id="6_7mycd"]
 [ext_resource type="Script" uid="uid://dky2k2kausfoq" path="res://orders_complete_label.gd" id="7_5vw27"]
@@ -23,16 +23,17 @@ pizza_scene = ExtResource("2_0xm2m")
 [node name="background" type="TextureRect" parent="." unique_id=1633162542]
 offset_right = 1280.0
 offset_bottom = 720.0
-texture = ExtResource("3_5vw27")
+texture = ExtResource("3_vivmo")
 
 [node name="bear" parent="." unique_id=122431385 instance=ExtResource("1_ig7tw")]
 unique_name_in_owner = true
-position = Vector2(629, 431)
+visible = false
+position = Vector2(628, 327)
 scale = Vector2(0.8, 0.8)
 
 [node name="pizza2" parent="." unique_id=1267966234 instance=ExtResource("2_0xm2m")]
 visible = false
-position = Vector2(969, 192)
+position = Vector2(938, 189)
 
 [node name="pizza" parent="." unique_id=1429048440 instance=ExtResource("2_0xm2m")]
 unique_name_in_owner = true
@@ -79,6 +80,7 @@ offset_right = 109.799995
 offset_bottom = 70.0
 
 [node name="scoreLabel" type="Label" parent="UI" unique_id=306874708]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 934.0
 offset_top = -4.0
@@ -90,6 +92,7 @@ text = "Score: 0"
 script = ExtResource("6_7mycd")
 
 [node name="ordersCompleteLabel" type="Label" parent="UI" unique_id=799972037]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 934.0
 offset_top = 45.0
@@ -113,6 +116,7 @@ script = ExtResource("10_4c57u")
 unique_name_in_owner = true
 
 [node name="ingredientSplat" parent="." unique_id=1590403576 instance=ExtResource("15_vivmo")]
+visible = false
 
 [connection signal="newOrder" from="." to="UI/scoreLabel" method="_on_main_new_order"]
 [connection signal="newOrder" from="." to="UI/ordersCompleteLabel" method="_on_main_new_order"]

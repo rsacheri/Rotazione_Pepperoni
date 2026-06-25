@@ -73,3 +73,4 @@ script = ExtResource("1_wmkwl")
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_lmfss")
 animation = &"pickUp"
+offset = Vector2(0, -49.165)

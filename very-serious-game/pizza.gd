@@ -24,7 +24,7 @@ func _add_sauce():
 
 func _add_cheese():
 	$%cheese.show()
-	toppings.append("tomato")
+	toppings.append("cheese")
 
 func _add_pepperoni():
 	$%pepperoni.show()
