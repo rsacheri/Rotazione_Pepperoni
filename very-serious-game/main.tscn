@@ -12,7 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://b7pxnhlegmtqo" path="res://cheese.tscn" id="11_w48qg"]
 [ext_resource type="PackedScene" uid="uid://qjmr52u62n6e" path="res://sausage.tscn" id="12_vivmo"]
 [ext_resource type="PackedScene" uid="uid://dwwygowpswrsu" path="res://pepperoni.tscn" id="13_2cqfq"]
+[ext_resource type="PackedScene" uid="uid://d3jlwc1fjum3n" path="res://order.tscn" id="14_w48qg"]
 [ext_resource type="PackedScene" uid="uid://cxh7ctxsywvjw" path="res://pineapple.tscn" id="14_yaehf"]
+[ext_resource type="PackedScene" uid="uid://d4m4g18baot80" path="res://ingredient_splat.tscn" id="15_vivmo"]
 
 [node name="main" type="Node" unique_id=1499929667]
 script = ExtResource("1_lquwl")
@@ -25,8 +27,8 @@ texture = ExtResource("3_5vw27")
 
 [node name="bear" parent="." unique_id=122431385 instance=ExtResource("1_ig7tw")]
 unique_name_in_owner = true
-position = Vector2(625, 432.00003)
-scale = Vector2(0.3, 0.3)
+position = Vector2(629, 431)
+scale = Vector2(0.8, 0.8)
 
 [node name="pizza2" parent="." unique_id=1267966234 instance=ExtResource("2_0xm2m")]
 visible = false
@@ -106,6 +108,11 @@ offset_right = 211.0
 offset_bottom = 583.0
 max_value = 15.0
 script = ExtResource("10_4c57u")
+
+[node name="order" parent="." unique_id=10254393 instance=ExtResource("14_w48qg")]
+unique_name_in_owner = true
+
+[node name="ingredientSplat" parent="." unique_id=1590403576 instance=ExtResource("15_vivmo")]
 
 [connection signal="newOrder" from="." to="UI/scoreLabel" method="_on_main_new_order"]
 [connection signal="newOrder" from="." to="UI/ordersCompleteLabel" method="_on_main_new_order"]

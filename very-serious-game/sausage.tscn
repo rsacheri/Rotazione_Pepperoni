@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://qjmr52u62n6e"]
 
-[ext_resource type="Texture2D" uid="uid://cm2pgb6447iav" path="res://art/main/Whole Foods (not to be confused with the very expensive store)/Whole_sausage.png" id="1_quh7t"]
+[ext_resource type="Texture2D" uid="uid://bvq7gbq86bej" path="res://art/main/Whole Foods (not to be confused with the very expensive store)/sausage final.png" id="1_quh7t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lmfss"]
 animations = [{

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cxh7ctxsywvjw"]
 
-[ext_resource type="Texture2D" uid="uid://b08g33dbrloas" path="res://art/main/Whole Foods (not to be confused with the very expensive store)/Whole pineapple.png" id="1_h5nld"]
+[ext_resource type="Texture2D" uid="uid://ceh3ljolf10ph" path="res://art/main/Whole Foods (not to be confused with the very expensive store)/pineapple final.png" id="1_h5nld"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_47bdn"]
 animations = [{

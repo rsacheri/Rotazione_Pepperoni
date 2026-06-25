@@ -75,7 +75,7 @@ func _throw_item():
 
 # throw animation
 func _throw_animation():
-	$%bear.play("throw")
+	$%bear.play("default")
 
 
 ############################################################
@@ -122,35 +122,40 @@ func _grab_tomato():
 	print("grabbed sauce!")
 	holdingItem = true
 	holdingTomato = true
-	$%bear.play("pickUp")
+	$%bear.animation = "pickUp"
+	$%bear.frame = 0
 	grab.emit()
 
 func _grab_cheese():
 	print("grabbed cheese!")
 	holdingItem = true
 	holdingCheese = true
-	$%bear.play("pickUp")
+	$%bear.animation = "pickUp"
+	$%bear.frame = 1
 	grab.emit()
 
 func _grab_pep():
 	print("grabbed pepperoni!")
 	holdingItem = true
 	holdingPepperoni = true
-	$%bear.play("pickUp")
+	$%bear.animation = "pickUp"
+	$%bear.frame = 2
 	grab.emit()
 
 func _grab_sausage():
 	print("grabbed sausage!")
 	holdingItem = true
 	holdingSausage = true
-	$%bear.play("pickUp")
+	$%bear.animation = "pickUp"
+	$%bear.frame = 3
 	grab.emit()
 
 func _grab_pineapple():
 	print("grabbed pineapple!")
 	holdingItem = true
 	holdingPineapple = true
-	$%bear.play("pickUp")
+	$%bear.animation = "pickUp"
+	$%bear.frame = 4
 	grab.emit()
 
 
@@ -214,7 +219,7 @@ func _throw_score() -> void:
 
 func _trash_item():
 	if (rotation_degrees >= 300) && (rotation_degrees <= 335):
-		$%bear.play("throw")
+		$%bear.play("default")
 		_clear_inventory()
 		Global.tempTempScore = 0
 		print("trashed item")
@@ -237,8 +242,6 @@ func _is_holding_sausage() -> bool:
 
 func _is_holding_pineapple() -> bool:
 	return holdingPineapple
-
-
 
 # get rid of what you're holding
 func _clear_inventory():

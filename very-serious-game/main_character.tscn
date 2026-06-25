@@ -1,14 +1,19 @@
 [gd_scene format=3 uid="uid://cv48hy1rj3bwi"]
 
 [ext_resource type="Script" uid="uid://c5m8wydnkiql3" path="res://main_character.gd" id="1_wmkwl"]
-[ext_resource type="Texture2D" uid="uid://duiec5g1illqm" path="res://bearIdle.png" id="2_uvl38"]
-[ext_resource type="Texture2D" uid="uid://84g83x60ng16" path="res://bearThrow.png" id="3_2q423"]
+[ext_resource type="Texture2D" uid="uid://cgl4ke6t68h71" path="res://art/main/bear/mc idle final.png" id="2_wcpx6"]
+[ext_resource type="Texture2D" uid="uid://djxu2v5px2dsg" path="res://art/main/bear/mc grab tomato final.png" id="3_u3evn"]
+[ext_resource type="Texture2D" uid="uid://cg1rm3knq1a5l" path="res://art/main/bear/mc grab cheese final.png" id="4_5q0wt"]
+[ext_resource type="Texture2D" uid="uid://boteb4670froq" path="res://art/main/bear/mc grab pepperoni final.png" id="5_qthh5"]
+[ext_resource type="Texture2D" uid="uid://b86sklpj6fuqy" path="res://art/main/bear/mc grab sausage final.png" id="6_1vudk"]
+[ext_resource type="Texture2D" uid="uid://ww365u1mncyj" path="res://art/main/bear/mc grab pineapple final.png" id="7_k7f46"]
+[ext_resource type="Texture2D" uid="uid://bp7huq8fad1t6" path="res://art/main/bear/mc grab final.png" id="8_47qjj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lmfss"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_uvl38")
+"texture": ExtResource("2_wcpx6")
 }],
 "loop": 1,
 "name": &"default",
@@ -16,21 +21,45 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_2q423")
+"texture": ExtResource("3_u3evn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_uvl38")
+"texture": ExtResource("4_5q0wt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qthh5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1vudk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_k7f46")
 }],
 "loop": 0,
 "name": &"pickUp",
-"speed": 5.0
+"speed": 0.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_2q423")
+"texture": ExtResource("3_u3evn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_uvl38")
+"texture": ExtResource("4_5q0wt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qthh5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1vudk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_k7f46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_47qjj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_wcpx6")
 }],
 "loop": 0,
 "name": &"throw",
@@ -43,3 +72,4 @@ script = ExtResource("1_wmkwl")
 [node name="bear" type="AnimatedSprite2D" parent="." unique_id=1225846855]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_lmfss")
+animation = &"pickUp"

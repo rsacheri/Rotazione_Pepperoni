@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dwwygowpswrsu"]
 
-[ext_resource type="Texture2D" uid="uid://bcf0xt7idkgyd" path="res://art/main/Whole Foods (not to be confused with the very expensive store)/Whole_pep.png" id="1_o5gsa"]
+[ext_resource type="Texture2D" uid="uid://b6ol1y7jktkk6" path="res://art/main/Whole Foods (not to be confused with the very expensive store)/pepperoni final.png" id="1_o5gsa"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lmfss"]
 animations = [{

@@ -35,8 +35,12 @@ func _on_bear_throw() -> void:
 		Global.tempScore += Global.tempTempScore
 		Global.tempTempScore = 0
 	
+	$ingredientSplat.move_to_front()
+	
 	if($%bear._is_holding_tomato()):
 		_throw_and_clear()
+		$ingredientSplat._play_tomato_animation()
+		await wait(0.3)
 		pizza_object._add_sauce()
 	elif($%bear._is_holding_cheese()):
 		_throw_and_clear()
@@ -95,8 +99,8 @@ func _check_order() -> bool:
 	if (pizza_object != null):
 		var order = pizza_object._check_toppings()
 		
-		order.sort()
-		Global.order.sort()
+		# order.sort()
+		# Global.order.sort()
 		
 		if (order != null):
 			if (order == Global.order):
@@ -151,6 +155,9 @@ func _new_order():
 	_generate_order()
 	
 	newOrder.emit()
+	
+	$%order/orderLabel._on_main_new_order()
+	$%order._match_order_to_picture()
 	
 	Global.numSpins = 0
 

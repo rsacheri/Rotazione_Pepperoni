@@ -1,6 +1,5 @@
 extends Label
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -13,12 +12,12 @@ func _process(delta: float) -> void:
 
 # display the order text
 func _on_main_new_order() -> void:
-	text = "%s" % _array_to_string(Global.order)
+	text = "%s" % _array_to_string()
 
 
 # convert order to string, with each ingredient on a new line
-func _array_to_string(arr: Array) -> String:
+func _array_to_string() -> String:
 	var s = ""
-	for i in arr:
+	for i in Global.order:
 		s += String(i) + "\n"
 	return s

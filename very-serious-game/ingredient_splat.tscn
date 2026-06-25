@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://d4m4g18baot80"]
+
+[ext_resource type="Texture2D" uid="uid://bashra53ewew0" path="res://art/main/food animations/tomatosplat1-ezgif.com-gif-to-sprite-converter.png" id="1_m7yel"]
+[ext_resource type="Script" uid="uid://drxche33uwk62" path="res://ingredient_splat.gd" id="1_uja77"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uja77"]
+atlas = ExtResource("1_m7yel")
+region = Rect2(0, 0, 300, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrhy0"]
+atlas = ExtResource("1_m7yel")
+region = Rect2(300, 0, 300, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hql7d"]
+atlas = ExtResource("1_m7yel")
+region = Rect2(600, 0, 300, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38l6c"]
+atlas = ExtResource("1_m7yel")
+region = Rect2(900, 0, 300, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oc188"]
+atlas = ExtResource("1_m7yel")
+region = Rect2(1200, 0, 300, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7gwdp"]
+atlas = ExtResource("1_m7yel")
+region = Rect2(1500, 0, 300, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kddw"]
+atlas = ExtResource("1_m7yel")
+region = Rect2(1800, 0, 300, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87mfs"]
+atlas = ExtResource("1_m7yel")
+region = Rect2(2100, 0, 300, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4781"]
+atlas = ExtResource("1_m7yel")
+region = Rect2(2400, 0, 300, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sltq4"]
+atlas = ExtResource("1_m7yel")
+region = Rect2(2700, 0, 300, 500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lmfss"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uja77")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qrhy0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hql7d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_38l6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oc188")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7gwdp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kddw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87mfs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4781")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sltq4")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 18.0
+}]
+
+[node name="ingredientSplat" type="Control" unique_id=1590403576]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uja77")
+
+[node name="tomatoSplat" type="AnimatedSprite2D" parent="." unique_id=1644082486]
+unique_name_in_owner = true
+visible = false
+position = Vector2(596, 255)
+sprite_frames = SubResource("SpriteFrames_lmfss")

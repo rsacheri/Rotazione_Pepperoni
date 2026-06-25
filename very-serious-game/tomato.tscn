@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cuqf8cwomeyl3"]
 
-[ext_resource type="Texture2D" uid="uid://5x5jbo4ffm30" path="res://art/main/Whole Foods (not to be confused with the very expensive store)/Whole_tomato.png" id="1_ajaoc"]
+[ext_resource type="Texture2D" uid="uid://cm3vtl25mpr7i" path="res://art/main/Whole Foods (not to be confused with the very expensive store)/tomato final.png" id="1_ajaoc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lmfss"]
 animations = [{

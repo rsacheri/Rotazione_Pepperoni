@@ -1,8 +1,27 @@
 [gd_scene format=3 uid="uid://c8w2qjk24scyq"]
 
 [ext_resource type="Script" uid="uid://cm4e8ghhge24u" path="res://starting_screen.gd" id="1_mdfg2"]
+[ext_resource type="Texture2D" uid="uid://dluj4kys71dqe" path="res://art/starting menu/main menu.png" id="2_l0vbx"]
+[ext_resource type="Texture2D" uid="uid://chvqabyobgigu" path="res://art/starting menu/main menu start.png" id="3_grbrr"]
+[ext_resource type="Texture2D" uid="uid://biu6d8v8p8f2f" path="res://art/starting menu/main menu options.png" id="4_jrgtf"]
+[ext_resource type="Texture2D" uid="uid://uesoyie4hlxo" path="res://art/starting menu/main menu Quit.png" id="5_bb5qi"]
 
-[sub_resource type="DrawableTexture2D" id="DrawableTexture2D_lryfp"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_lmfss"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_grbrr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jrgtf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bb5qi")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="startingScreen" type="Control" unique_id=1865527344]
 layout_mode = 3
@@ -14,12 +33,14 @@ grow_vertical = 2
 script = ExtResource("1_mdfg2")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1821244198]
+visible = false
 layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
-texture = SubResource("DrawableTexture2D_lryfp")
+texture = ExtResource("2_l0vbx")
 
 [node name="menuButtons" type="VBoxContainer" parent="TextureRect" unique_id=1489046637]
+visible = false
 layout_mode = 0
 offset_left = 355.0
 offset_top = 214.0
@@ -40,6 +61,11 @@ text = "Options"
 clip_contents = true
 layout_mode = 2
 text = "Exit"
+
+[node name="mainMenu" type="AnimatedSprite2D" parent="." unique_id=2107780864]
+unique_name_in_owner = true
+position = Vector2(640, 360)
+sprite_frames = SubResource("SpriteFrames_lmfss")
 
 [connection signal="pressed" from="TextureRect/menuButtons/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="TextureRect/menuButtons/exit" to="." method="_on_exit_pressed"]
