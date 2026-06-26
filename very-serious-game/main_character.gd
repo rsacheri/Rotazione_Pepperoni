@@ -188,7 +188,7 @@ func _grab_ingredient_score() -> void:
 	
 	Global.tempTempScore = 0
 	
-	if (score_val > 0.85):
+	if (score_val > 0.9):
 		$perfectsfx.play()
 		perfect.emit()
 		#$mouseSpeech._perfect()
@@ -219,7 +219,7 @@ func _throw_score() -> void:
 	
 	# Global.tempTempScore = 0
 	
-	if (score_val > 0.85):
+	if (score_val > 0.9):
 		#$mouseSpeech._perfect()
 		perfect.emit()
 		Global.tempScore += 3

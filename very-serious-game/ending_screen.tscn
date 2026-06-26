@@ -98,6 +98,7 @@ script = ExtResource("6_67cay")
 [node name="music" type="AudioStreamPlayer" parent="." unique_id=96407985]
 unique_name_in_owner = true
 stream = ExtResource("7_67cay")
+volume_db = -20.0
 parameters/looping = true
 
 [node name="optionSFX" type="AudioStreamPlayer" parent="." unique_id=759234640]

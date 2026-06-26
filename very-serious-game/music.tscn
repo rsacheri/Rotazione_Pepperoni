@@ -9,3 +9,4 @@ script = ExtResource("2_5vxup")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1281038433]
 unique_name_in_owner = true
 stream = ExtResource("2_w5q55")
+volume_db = -20.0

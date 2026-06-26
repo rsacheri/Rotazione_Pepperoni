@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dlp5iuftyt570"]
+
+[ext_resource type="Texture2D" uid="uid://dmsrv786pe6fm" path="res://art/starting menu/controls.png" id="1_gpdjo"]
+[ext_resource type="Script" uid="uid://1vv0yf3mhdcs" path="res://controls.gd" id="1_qo8cm"]
+[ext_resource type="FontFile" uid="uid://ds3yjn2o2133m" path="res://Myhandwriting3-Regular.ttf" id="3_xwvqn"]
+
+[node name="controls" type="Control" unique_id=1650953917]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qo8cm")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1869889567]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_gpdjo")
+
+[node name="Label" type="Label" parent="." unique_id=99431415]
+layout_mode = 0
+offset_left = 904.0
+offset_top = 916.0
+offset_right = 1268.0
+offset_bottom = 951.0
+theme_override_fonts/font = ExtResource("3_xwvqn")
+theme_override_font_sizes/font_size = 42
+text = "Press enter to continue "

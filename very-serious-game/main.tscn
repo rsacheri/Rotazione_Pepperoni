@@ -152,6 +152,7 @@ scale = Vector2(0.99999994, 0.99999994)
 [node name="music" type="AudioStreamPlayer" parent="." unique_id=1745256876]
 unique_name_in_owner = true
 stream = ExtResource("19_cegan")
+volume_db = -20.0
 parameters/looping = true
 
 [connection signal="newOrder" from="." to="UI/scoreLabel" method="_on_main_new_order"]

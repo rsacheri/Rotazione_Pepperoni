@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b2e3hpn21xfl3" path="res://art/starting menu/cutscene 5 fixed.png" id="5_pvbl2"]
 [ext_resource type="Texture2D" uid="uid://d4gs6fnhrvc5f" path="res://art/starting menu/cutscene 6 fixed.png" id="6_vi1t0"]
 [ext_resource type="Texture2D" uid="uid://c737sbu04lxia" path="res://art/starting menu/cutscene 7 fixed.png" id="7_1titf"]
+[ext_resource type="FontFile" uid="uid://ds3yjn2o2133m" path="res://Myhandwriting3-Regular.ttf" id="10_qcoa3"]
 
 [sub_resource type="Animation" id="Animation_dpuov"]
 resource_name = "cutscene"
@@ -69,11 +70,21 @@ libraries/ = SubResource("AnimationLibrary_ye7fo")
 [node name="music" type="AudioStreamPlayer" parent="." unique_id=731453148]
 unique_name_in_owner = true
 stream = ExtResource("2_8ye5a")
+volume_db = -20.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=582695887]
 unique_name_in_owner = true
 position = Vector2(640, 480)
 sprite_frames = SubResource("SpriteFrames_lmfss")
+
+[node name="Label" type="Label" parent="." unique_id=1488606073]
+offset_left = 987.0
+offset_top = 918.0
+offset_right = 1279.0
+offset_bottom = 953.0
+theme_override_fonts/font = ExtResource("10_qcoa3")
+theme_override_font_sizes/font_size = 42
+text = "Press enter to skip "
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1915590421]
 unique_name_in_owner = true

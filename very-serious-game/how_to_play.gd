@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 func _input(event):
 	# submit order
 	if event.is_action_pressed("trash_pizza") || event.is_action_pressed("enter"):
-		get_tree().change_scene_to_file("res://main.tscn")
+		get_tree().change_scene_to_file("res://controls.tscn")
 
 
 # wait function

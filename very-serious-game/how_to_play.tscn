@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cf451xganbey8" path="res://art/starting menu/how to play.png" id="1_1ad62"]
 [ext_resource type="Script" uid="uid://btkpn7arotaqv" path="res://how_to_play.gd" id="1_g0446"]
+[ext_resource type="FontFile" uid="uid://ds3yjn2o2133m" path="res://Myhandwriting3-Regular.ttf" id="3_uvb5p"]
 
 [node name="howToPlay" type="Control" unique_id=1568877628]
 layout_mode = 3
@@ -13,3 +14,13 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_1ad62")
+
+[node name="Label" type="Label" parent="." unique_id=209498915]
+layout_mode = 0
+offset_left = 904.0
+offset_top = 916.0
+offset_right = 1268.0
+offset_bottom = 951.0
+theme_override_fonts/font = ExtResource("3_uvb5p")
+theme_override_font_sizes/font_size = 42
+text = "Press enter to continue "
