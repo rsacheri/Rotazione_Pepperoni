@@ -94,3 +94,4 @@ stream = ExtResource("12_1vudk")
 
 [node name="trashsfx" type="AudioStreamPlayer" parent="." unique_id=548958818]
 stream = ExtResource("13_k7f46")
+volume_db = -7.0
