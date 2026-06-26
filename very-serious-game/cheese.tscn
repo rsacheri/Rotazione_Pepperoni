@@ -1,16 +1,68 @@
 [gd_scene format=3 uid="uid://b7pxnhlegmtqo"]
 
-[ext_resource type="Texture2D" uid="uid://rt6ew6he2jtm" path="res://art/main/Whole Foods (not to be confused with the very expensive store)/cheese final.png" id="1_kw545"]
+[ext_resource type="Texture2D" uid="uid://cs4usekeskvyt" path="res://art/main/food animations/cheese animation/cheeseAnimation_000.png" id="1_r5wbg"]
+[ext_resource type="Texture2D" uid="uid://bs1seb10c07og" path="res://art/main/food animations/cheese animation/cheeseAnimation_001.png" id="2_723ax"]
+[ext_resource type="Texture2D" uid="uid://cxymjt7j162l7" path="res://art/main/food animations/cheese animation/cheeseAnimation_002.png" id="3_ttunl"]
+[ext_resource type="Texture2D" uid="uid://bjgx8dcelr5o" path="res://art/main/food animations/cheese animation/cheeseAnimation_003.png" id="4_3ung7"]
+[ext_resource type="Texture2D" uid="uid://by7yyc5cakiji" path="res://art/main/food animations/cheese animation/cheeseAnimation_004.png" id="5_7orb0"]
+[ext_resource type="Texture2D" uid="uid://bo7jsfg5jp3tg" path="res://art/main/food animations/cheese animation/cheeseAnimation_005.png" id="6_jpiub"]
+[ext_resource type="Texture2D" uid="uid://b1qkabck7ijdp" path="res://art/main/food animations/cheese animation/cheeseAnimation_006.png" id="7_hr16o"]
+[ext_resource type="Texture2D" uid="uid://c7y1aheprn21g" path="res://art/main/food animations/cheese animation/cheeseAnimation_007.png" id="8_7y10m"]
+[ext_resource type="Texture2D" uid="uid://btsuuksnrhnag" path="res://art/main/food animations/cheese animation/cheeseAnimation_008.png" id="9_wni6u"]
+[ext_resource type="Texture2D" uid="uid://dlt6ho532wnvb" path="res://art/main/food animations/cheese animation/cheeseAnimation_009.png" id="10_jjas3"]
+[ext_resource type="Texture2D" uid="uid://bwfv0ia4h76ki" path="res://art/main/food animations/cheese animation/cheeseAnimation_010.png" id="11_frlg5"]
+[ext_resource type="Texture2D" uid="uid://bggxil815lmms" path="res://art/main/food animations/cheese animation/cheeseAnimation_011.png" id="12_6nirb"]
+[ext_resource type="Texture2D" uid="uid://bnop2w17c43ah" path="res://art/main/food animations/cheese animation/cheeseAnimation_012.png" id="13_tbbe4"]
+[ext_resource type="Texture2D" uid="uid://c4s5l3pegitvn" path="res://art/main/food animations/cheese animation/cheeseAnimation_013.png" id="14_duc24"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lmfss"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_kw545")
+"texture": ExtResource("1_r5wbg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_723ax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ttunl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3ung7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7orb0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jpiub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hr16o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7y10m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_wni6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jjas3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_frlg5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_6nirb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_tbbe4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_duc24")
 }],
 "loop": 1,
 "name": &"whole",
-"speed": 5.0
+"speed": 20.0
 }]
 
 [node name="cheese" type="Node2D" unique_id=682771179]
@@ -19,3 +71,4 @@ animations = [{
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_lmfss")
 animation = &"whole"
+frame_progress = 0.68238795

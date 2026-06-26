@@ -1,16 +1,68 @@
 [gd_scene format=3 uid="uid://qjmr52u62n6e"]
 
-[ext_resource type="Texture2D" uid="uid://bvq7gbq86bej" path="res://art/main/Whole Foods (not to be confused with the very expensive store)/sausage final.png" id="1_quh7t"]
+[ext_resource type="Texture2D" uid="uid://c172wdsrgw5t6" path="res://art/main/food animations/sausage animation/sausageAnimation_000.png" id="1_65ge5"]
+[ext_resource type="Texture2D" uid="uid://2vbx3jo3f05n" path="res://art/main/food animations/sausage animation/sausageAnimation_001.png" id="2_cxs32"]
+[ext_resource type="Texture2D" uid="uid://dv53rju0yhly2" path="res://art/main/food animations/sausage animation/sausageAnimation_002.png" id="3_dkqd8"]
+[ext_resource type="Texture2D" uid="uid://c232xcn64hjuv" path="res://art/main/food animations/sausage animation/sausageAnimation_003.png" id="4_5cal0"]
+[ext_resource type="Texture2D" uid="uid://bdffm3su1ivc" path="res://art/main/food animations/sausage animation/sausageAnimation_004.png" id="5_xskuy"]
+[ext_resource type="Texture2D" uid="uid://cp01aaxnrxgrj" path="res://art/main/food animations/sausage animation/sausageAnimation_005.png" id="6_p8kih"]
+[ext_resource type="Texture2D" uid="uid://clf4iv6g2ygjh" path="res://art/main/food animations/sausage animation/sausageAnimation_006.png" id="7_e612r"]
+[ext_resource type="Texture2D" uid="uid://c837o18eg65w6" path="res://art/main/food animations/sausage animation/sausageAnimation_007.png" id="8_flqpe"]
+[ext_resource type="Texture2D" uid="uid://cyt7nkh4y7el8" path="res://art/main/food animations/sausage animation/sausageAnimation_008.png" id="9_pm71y"]
+[ext_resource type="Texture2D" uid="uid://230uyhaof5id" path="res://art/main/food animations/sausage animation/sausageAnimation_009.png" id="10_2exfy"]
+[ext_resource type="Texture2D" uid="uid://73g6maqmynxp" path="res://art/main/food animations/sausage animation/sausageAnimation_010.png" id="11_pqyes"]
+[ext_resource type="Texture2D" uid="uid://cuvain5ys8ggn" path="res://art/main/food animations/sausage animation/sausageAnimation_011.png" id="12_rhi20"]
+[ext_resource type="Texture2D" uid="uid://1w7fb7d8atm8" path="res://art/main/food animations/sausage animation/sausageAnimation_012.png" id="13_8fag1"]
+[ext_resource type="Texture2D" uid="uid://bxbv1h7m2uedj" path="res://art/main/food animations/pineapple animation/pineappleAnimation_013.png" id="14_4uhhv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lmfss"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_quh7t")
+"texture": ExtResource("1_65ge5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_cxs32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dkqd8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5cal0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xskuy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_p8kih")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_e612r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_flqpe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_pm71y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2exfy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_pqyes")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_rhi20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_8fag1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_4uhhv")
 }],
 "loop": 1,
 "name": &"whole",
-"speed": 5.0
+"speed": 20.0
 }]
 
 [node name="sausage" type="Node2D" unique_id=277975591]

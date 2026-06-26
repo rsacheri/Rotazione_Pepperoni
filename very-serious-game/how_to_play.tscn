@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://drxxau5eqouae"]
+
+[ext_resource type="Texture2D" uid="uid://cf451xganbey8" path="res://art/starting menu/how to play.png" id="1_1ad62"]
+[ext_resource type="Script" uid="uid://btkpn7arotaqv" path="res://how_to_play.gd" id="1_g0446"]
+
+[node name="howToPlay" type="Control" unique_id=1568877628]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_g0446")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1667615918]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_1ad62")

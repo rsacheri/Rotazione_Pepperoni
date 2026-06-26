@@ -4,17 +4,24 @@
 [ext_resource type="Script" uid="uid://d3xik6q3e5fd8" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://81653nsgfwny" path="res://pizza.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://cuqf8cwomeyl3" path="res://tomato.tscn" id="3_h2yge"]
-[ext_resource type="Texture2D" uid="uid://b55eo7ngujpte" path="res://art/main/Workspace final.png" id="3_vivmo"]
+[ext_resource type="Texture2D" uid="uid://cn0tnyyn53tyg" path="res://art/main/Workspace.png" id="3_vivmo"]
 [ext_resource type="PackedScene" uid="uid://bcgg4axwb8xwi" path="res://lives.tscn" id="5_kek77"]
 [ext_resource type="Script" uid="uid://bjqe8btiapdiq" path="res://score.gd" id="6_7mycd"]
 [ext_resource type="Script" uid="uid://dky2k2kausfoq" path="res://orders_complete_label.gd" id="7_5vw27"]
 [ext_resource type="Script" uid="uid://d23mgrptcexhg" path="res://progress_bar.gd" id="10_4c57u"]
 [ext_resource type="PackedScene" uid="uid://b7pxnhlegmtqo" path="res://cheese.tscn" id="11_w48qg"]
+[ext_resource type="Texture2D" uid="uid://bcawto13cut41" path="res://art/main/Reciept ui.png" id="12_074og"]
+[ext_resource type="FontFile" uid="uid://ds3yjn2o2133m" path="res://Myhandwriting3-Regular.ttf" id="12_cegan"]
 [ext_resource type="PackedScene" uid="uid://qjmr52u62n6e" path="res://sausage.tscn" id="12_vivmo"]
 [ext_resource type="PackedScene" uid="uid://dwwygowpswrsu" path="res://pepperoni.tscn" id="13_2cqfq"]
 [ext_resource type="PackedScene" uid="uid://d3jlwc1fjum3n" path="res://order.tscn" id="14_w48qg"]
 [ext_resource type="PackedScene" uid="uid://cxh7ctxsywvjw" path="res://pineapple.tscn" id="14_yaehf"]
 [ext_resource type="PackedScene" uid="uid://d4m4g18baot80" path="res://ingredient_splat.tscn" id="15_vivmo"]
+[ext_resource type="PackedScene" uid="uid://blok0kyknsck6" path="res://mouse_speech.tscn" id="17_yaehf"]
+[ext_resource type="AudioStream" uid="uid://vx7y3ttg815d" path="res://sounds/main theme.mp3" id="19_cegan"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_074og"]
+bg_color = Color(0.8784314, 0.70980394, 0.32156864, 1)
 
 [node name="main" type="Node" unique_id=1499929667]
 script = ExtResource("1_lquwl")
@@ -27,22 +34,21 @@ texture = ExtResource("3_vivmo")
 
 [node name="bear" parent="." unique_id=122431385 instance=ExtResource("1_ig7tw")]
 unique_name_in_owner = true
-visible = false
-position = Vector2(628, 327)
+position = Vector2(640, 480)
 scale = Vector2(0.8, 0.8)
 
 [node name="pizza2" parent="." unique_id=1267966234 instance=ExtResource("2_0xm2m")]
 visible = false
-position = Vector2(938, 189)
+position = Vector2(980, 315)
 
 [node name="pizza" parent="." unique_id=1429048440 instance=ExtResource("2_0xm2m")]
 unique_name_in_owner = true
 visible = false
-position = Vector2(635, 167)
+position = Vector2(655, 183)
 
 [node name="lives" parent="." unique_id=199487736 instance=ExtResource("5_kek77")]
 unique_name_in_owner = true
-position = Vector2(187, 665.99994)
+position = Vector2(187, 904)
 scale = Vector2(0.18, 0.18)
 
 [node name="tomato" parent="." unique_id=1839137245 instance=ExtResource("3_h2yge")]
@@ -79,48 +85,81 @@ offset_top = 16.0
 offset_right = 109.799995
 offset_bottom = 70.0
 
+[node name="receipt" type="TextureRect" parent="UI" unique_id=133296368]
+layout_mode = 0
+offset_top = -14.0
+offset_right = 1280.0
+offset_bottom = 706.0
+texture = ExtResource("12_074og")
+
 [node name="scoreLabel" type="Label" parent="UI" unique_id=306874708]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 934.0
-offset_top = -4.0
-offset_right = 1055.0
-offset_bottom = 41.0
-theme_override_colors/font_color = Color(0.27105352, 0.17654923, 0.17691517, 1)
-theme_override_font_sizes/font_size = 32
-text = "Score: 0"
+offset_left = 1117.0
+offset_top = 169.0
+offset_right = 1238.0
+offset_bottom = 234.0
+theme_override_colors/font_color = Color(0.3647059, 0.2784314, 0.2784314, 1)
+theme_override_fonts/font = ExtResource("12_cegan")
+theme_override_font_sizes/font_size = 70
+text = "0"
 script = ExtResource("6_7mycd")
 
 [node name="ordersCompleteLabel" type="Label" parent="UI" unique_id=799972037]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 934.0
-offset_top = 45.0
-offset_right = 1254.0
-offset_bottom = 90.0
-theme_override_colors/font_color = Color(0.27105352, 0.17654923, 0.17691517, 1)
-theme_override_font_sizes/font_size = 32
-text = "Orders Completed: 0"
+offset_left = 1104.0
+offset_top = 78.0
+offset_right = 1248.0
+offset_bottom = 136.0
+theme_override_colors/font_color = Color(0.3647059, 0.2784314, 0.2784314, 1)
+theme_override_fonts/font = ExtResource("12_cegan")
+theme_override_font_sizes/font_size = 70
+text = "0"
+horizontal_alignment = 1
 script = ExtResource("7_5vw27")
 
 [node name="ProgressBar" type="ProgressBar" parent="UI" unique_id=1021710613]
 layout_mode = 0
-offset_left = 47.0
-offset_top = 556.0
-offset_right = 211.0
-offset_bottom = 583.0
+offset_left = 8.0
+offset_top = 777.0
+offset_right = 281.0
+offset_bottom = 816.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_074og")
 max_value = 15.0
+show_percentage = false
 script = ExtResource("10_4c57u")
 
 [node name="order" parent="." unique_id=10254393 instance=ExtResource("14_w48qg")]
 unique_name_in_owner = true
+offset_left = -15.0
+offset_top = -5.0
+offset_right = -15.0
+offset_bottom = -5.0
+scale = Vector2(1.145, 1.145)
 
 [node name="ingredientSplat" parent="." unique_id=1590403576 instance=ExtResource("15_vivmo")]
-visible = false
+offset_left = 631.0
+offset_top = 262.0
+offset_right = 631.0
+offset_bottom = 262.0
+
+[node name="mouseSpeech" parent="." unique_id=1137316619 instance=ExtResource("17_yaehf")]
+unique_name_in_owner = true
+position = Vector2(611, 545)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="music" type="AudioStreamPlayer" parent="." unique_id=1745256876]
+unique_name_in_owner = true
+stream = ExtResource("19_cegan")
+parameters/looping = true
 
 [connection signal="newOrder" from="." to="UI/scoreLabel" method="_on_main_new_order"]
 [connection signal="newOrder" from="." to="UI/ordersCompleteLabel" method="_on_main_new_order"]
+[connection signal="good" from="bear" to="mouseSpeech" method="_on_bear_good"]
 [connection signal="grab" from="bear" to="." method="_on_bear_grab"]
 [connection signal="grab" from="bear" to="UI/scoreLabel" method="_on_bear_grab"]
+[connection signal="okay" from="bear" to="mouseSpeech" method="_on_bear_okay"]
+[connection signal="perfect" from="bear" to="mouseSpeech" method="_on_bear_perfect"]
 [connection signal="spin" from="bear" to="." method="_on_bear_spin"]
 [connection signal="throw" from="bear" to="." method="_on_bear_throw"]

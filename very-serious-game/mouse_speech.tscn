@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://blok0kyknsck6"]
+
+[ext_resource type="Script" uid="uid://cqoecdrxms00" path="res://mouse_speech.gd" id="1_oxye0"]
+[ext_resource type="Texture2D" uid="uid://ts4yhxtikb6l" path="res://art/main/mouse bubbles/mouse perfect.png" id="2_irjdq"]
+[ext_resource type="Texture2D" uid="uid://b3xftb8m00fkj" path="res://art/main/mouse bubbles/mouse good.png" id="3_ad1p3"]
+[ext_resource type="Texture2D" uid="uid://b4v7ohgp3h3rx" path="res://art/main/mouse bubbles/mouse ok.png" id="4_ys58x"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lmfss"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_irjdq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ad1p3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ys58x")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="mouseSpeech" type="Node2D" unique_id=1137316619]
+script = ExtResource("1_oxye0")
+
+[node name="speechBubbles" type="AnimatedSprite2D" parent="." unique_id=1396068200]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_lmfss")
+frame_progress = 0.2586154

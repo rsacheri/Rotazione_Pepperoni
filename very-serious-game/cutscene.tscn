@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://b34rlikm4y1d2"]
+
+[ext_resource type="Script" uid="uid://bpds3qkvtahur" path="res://cutscene.gd" id="1_8ye5a"]
+[ext_resource type="Texture2D" uid="uid://b8fkiwnl2ys55" path="res://art/starting menu/cutscene 1 fixed.png" id="1_53jq0"]
+[ext_resource type="Texture2D" uid="uid://vrb57ux4dnry" path="res://art/starting menu/cutscene 2 fixed.png" id="2_3q24f"]
+[ext_resource type="AudioStream" uid="uid://b84bn8tj8pbab" path="res://sounds/opening theme.mp3" id="2_8ye5a"]
+[ext_resource type="Texture2D" uid="uid://ceqx4ud75o1cq" path="res://art/starting menu/cutscene 3 fixed.png" id="3_8ye5a"]
+[ext_resource type="Texture2D" uid="uid://dyq8pnsc86qv" path="res://art/starting menu/cutscene 4 fixed.png" id="4_qcoa3"]
+[ext_resource type="Texture2D" uid="uid://b2e3hpn21xfl3" path="res://art/starting menu/cutscene 5 fixed.png" id="5_pvbl2"]
+[ext_resource type="Texture2D" uid="uid://d4gs6fnhrvc5f" path="res://art/starting menu/cutscene 6 fixed.png" id="6_vi1t0"]
+[ext_resource type="Texture2D" uid="uid://c737sbu04lxia" path="res://art/starting menu/cutscene 7 fixed.png" id="7_1titf"]
+
+[sub_resource type="Animation" id="Animation_dpuov"]
+resource_name = "cutscene"
+length = 9.433333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:sprite_frames")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ye7fo"]
+_data = {
+&"cutscene": SubResource("Animation_dpuov")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lmfss"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_53jq0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3q24f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8ye5a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qcoa3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pvbl2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vi1t0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1titf")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 0.2
+}]
+
+[node name="cutscene" type="Node2D" unique_id=662838000]
+script = ExtResource("1_8ye5a")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1791461443]
+libraries/ = SubResource("AnimationLibrary_ye7fo")
+
+[node name="music" type="AudioStreamPlayer" parent="." unique_id=731453148]
+unique_name_in_owner = true
+stream = ExtResource("2_8ye5a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=582695887]
+unique_name_in_owner = true
+position = Vector2(640, 480)
+sprite_frames = SubResource("SpriteFrames_lmfss")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1915590421]
+unique_name_in_owner = true
+offset_right = 1280.0
+offset_bottom = 960.0
+color = Color(0, 0, 0, 1)

@@ -1,16 +1,68 @@
 [gd_scene format=3 uid="uid://cxh7ctxsywvjw"]
 
-[ext_resource type="Texture2D" uid="uid://ceh3ljolf10ph" path="res://art/main/Whole Foods (not to be confused with the very expensive store)/pineapple final.png" id="1_h5nld"]
+[ext_resource type="Texture2D" uid="uid://3ne411xpvic4" path="res://art/main/food animations/pineapple animation/pineappleAnimation_000.png" id="1_2cml4"]
+[ext_resource type="Texture2D" uid="uid://nbsu23j8blm" path="res://art/main/food animations/pineapple animation/pineappleAnimation_001.png" id="2_tqnqh"]
+[ext_resource type="Texture2D" uid="uid://ovu28p4uxbkj" path="res://art/main/food animations/pineapple animation/pineappleAnimation_002.png" id="3_mebkk"]
+[ext_resource type="Texture2D" uid="uid://8jm3fd8lbqof" path="res://art/main/food animations/pineapple animation/pineappleAnimation_003.png" id="4_fo2bg"]
+[ext_resource type="Texture2D" uid="uid://dn5dgdtuy2i6u" path="res://art/main/food animations/pineapple animation/pineappleAnimation_004.png" id="5_75ich"]
+[ext_resource type="Texture2D" uid="uid://cyidjppbpfmce" path="res://art/main/food animations/pineapple animation/pineappleAnimation_005.png" id="6_ysdxs"]
+[ext_resource type="Texture2D" uid="uid://ck1kxsr3iqywc" path="res://art/main/food animations/pineapple animation/pineappleAnimation_006.png" id="7_lo33n"]
+[ext_resource type="Texture2D" uid="uid://dojisevb7o7mq" path="res://art/main/food animations/pineapple animation/pineappleAnimation_007.png" id="8_dlraq"]
+[ext_resource type="Texture2D" uid="uid://dv3coiuwel63x" path="res://art/main/food animations/pineapple animation/pineappleAnimation_008.png" id="9_rqlxa"]
+[ext_resource type="Texture2D" uid="uid://c6mlo0ms833dc" path="res://art/main/food animations/pineapple animation/pineappleAnimation_009.png" id="10_vakkj"]
+[ext_resource type="Texture2D" uid="uid://ymehvj5t1tex" path="res://art/main/food animations/pineapple animation/pineappleAnimation_010.png" id="11_0g52f"]
+[ext_resource type="Texture2D" uid="uid://ct0d62ig6v7qi" path="res://art/main/food animations/pineapple animation/pineappleAnimation_011.png" id="12_0225y"]
+[ext_resource type="Texture2D" uid="uid://b46nsxfkg4px4" path="res://art/main/food animations/pineapple animation/pineappleAnimation_012.png" id="13_3ovty"]
+[ext_resource type="Texture2D" uid="uid://bxbv1h7m2uedj" path="res://art/main/food animations/pineapple animation/pineappleAnimation_013.png" id="14_nss1j"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_47bdn"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_h5nld")
+"texture": ExtResource("1_2cml4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_tqnqh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mebkk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fo2bg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_75ich")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ysdxs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lo33n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dlraq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_rqlxa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vakkj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_0g52f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_0225y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_3ovty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_nss1j")
 }],
 "loop": 1,
 "name": &"whole",
-"speed": 5.0
+"speed": 20.0
 }]
 
 [node name="pineapple" type="Node2D" unique_id=1969231461]

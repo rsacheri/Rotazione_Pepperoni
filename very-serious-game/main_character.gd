@@ -15,6 +15,10 @@ signal grab
 signal throw
 signal spin
 
+signal perfect
+signal good
+signal okay
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_clear_inventory()
@@ -58,7 +62,6 @@ func _input(event):
 		if (holdingItem):
 			_throw_item()
 			
-			
 	if event.is_action_pressed("trash"):
 		if (holdingItem):
 			_trash_item()
@@ -70,6 +73,7 @@ func _input(event):
 # throw item
 func _throw_item():
 	if (rotation_degrees >= 342) || (rotation_degrees <= 18):
+		$throwsfx.play()
 		throw.emit()
 		_throw_score()
 
@@ -185,10 +189,19 @@ func _grab_ingredient_score() -> void:
 	Global.tempTempScore = 0
 	
 	if (score_val > 0.85):
+		$perfectsfx.play()
+		perfect.emit()
+		#$mouseSpeech._perfect()
 		Global.tempTempScore += 3
 	elif (score_val > 0.5):
+		$goodsfx.play()
+		good.emit()
+		#$mouseSpeech._good()
 		Global.tempTempScore += 2
 	else:
+		$okaysfx.play()
+		okay.emit()
+		#$mouseSpeech._okay()
 		Global.tempTempScore += 1
 
 func _throw_score() -> void:
@@ -207,12 +220,18 @@ func _throw_score() -> void:
 	# Global.tempTempScore = 0
 	
 	if (score_val > 0.85):
+		#$mouseSpeech._perfect()
+		perfect.emit()
 		Global.tempScore += 3
 		print("Throw Score: 3")
 	elif (score_val > 0.5):
+		good.emit()
+		#$mouseSpeech._good()
 		Global.tempScore += 2
 		print("Throw Score: 2")
 	else:
+		okay.emit()
+		#$mouseSpeech._okay()
 		Global.tempScore += 1
 		print("Throw Score: 1")
 

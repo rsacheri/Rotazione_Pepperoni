@@ -1,84 +1,323 @@
 [gd_scene format=3 uid="uid://d4m4g18baot80"]
 
-[ext_resource type="Texture2D" uid="uid://bashra53ewew0" path="res://art/main/food animations/tomatosplat1-ezgif.com-gif-to-sprite-converter.png" id="1_m7yel"]
 [ext_resource type="Script" uid="uid://drxche33uwk62" path="res://ingredient_splat.gd" id="1_uja77"]
+[ext_resource type="Texture2D" uid="uid://dx5xibss15vgj" path="res://art/main/food animations/tomato animation/tomatoAnimation_000.png" id="2_uw1vb"]
+[ext_resource type="Texture2D" uid="uid://j013qjkr3826" path="res://art/main/food animations/tomato animation/tomatoAnimation_001.png" id="3_v6dq5"]
+[ext_resource type="Texture2D" uid="uid://ht6tov2r2wpn" path="res://art/main/food animations/tomato animation/tomatoAnimation_002.png" id="4_ck1rw"]
+[ext_resource type="Texture2D" uid="uid://b1krqg4usld0d" path="res://art/main/food animations/tomato animation/tomatoAnimation_003.png" id="5_5k0l0"]
+[ext_resource type="Texture2D" uid="uid://7axfphdlclnj" path="res://art/main/food animations/tomato animation/tomatoAnimation_004.png" id="6_0ulhk"]
+[ext_resource type="Texture2D" uid="uid://btt4mcdpn35d4" path="res://art/main/food animations/tomato animation/tomatoAnimation_005.png" id="7_uq0pb"]
+[ext_resource type="Texture2D" uid="uid://c4dcbaf2i2jbl" path="res://art/main/food animations/tomato animation/tomatoAnimation_006.png" id="8_nspty"]
+[ext_resource type="Texture2D" uid="uid://by78chov7ms5j" path="res://art/main/food animations/tomato animation/tomatoAnimation_007.png" id="9_gn83f"]
+[ext_resource type="Texture2D" uid="uid://dfvkaja7ff0h5" path="res://art/main/food animations/tomato animation/tomatoAnimation_008.png" id="10_oqyqu"]
+[ext_resource type="Texture2D" uid="uid://bplxuk4xgujhq" path="res://art/main/food animations/tomato animation/tomatoAnimation_009.png" id="11_pkeoj"]
+[ext_resource type="Texture2D" uid="uid://csjcs2jkmsf4s" path="res://art/main/food animations/tomato animation/tomatoAnimation_010.png" id="12_kblkq"]
+[ext_resource type="Texture2D" uid="uid://2ejfy82a0mhg" path="res://art/main/food animations/tomato animation/tomatoAnimation_011.png" id="13_6j4wa"]
+[ext_resource type="Texture2D" uid="uid://day4nymofijcu" path="res://art/main/food animations/tomato animation/tomatoAnimation_012.png" id="14_ntxdg"]
+[ext_resource type="Texture2D" uid="uid://cs4usekeskvyt" path="res://art/main/food animations/cheese animation/cheeseAnimation_000.png" id="15_a1hdm"]
+[ext_resource type="Texture2D" uid="uid://bs1seb10c07og" path="res://art/main/food animations/cheese animation/cheeseAnimation_001.png" id="16_ng7f5"]
+[ext_resource type="Texture2D" uid="uid://cxymjt7j162l7" path="res://art/main/food animations/cheese animation/cheeseAnimation_002.png" id="17_10vgs"]
+[ext_resource type="Texture2D" uid="uid://bjgx8dcelr5o" path="res://art/main/food animations/cheese animation/cheeseAnimation_003.png" id="18_0p0hk"]
+[ext_resource type="Texture2D" uid="uid://by7yyc5cakiji" path="res://art/main/food animations/cheese animation/cheeseAnimation_004.png" id="19_gpwnj"]
+[ext_resource type="Texture2D" uid="uid://bo7jsfg5jp3tg" path="res://art/main/food animations/cheese animation/cheeseAnimation_005.png" id="20_g8bbo"]
+[ext_resource type="Texture2D" uid="uid://b1qkabck7ijdp" path="res://art/main/food animations/cheese animation/cheeseAnimation_006.png" id="21_nhm6g"]
+[ext_resource type="Texture2D" uid="uid://c7y1aheprn21g" path="res://art/main/food animations/cheese animation/cheeseAnimation_007.png" id="22_8q6xg"]
+[ext_resource type="Texture2D" uid="uid://btsuuksnrhnag" path="res://art/main/food animations/cheese animation/cheeseAnimation_008.png" id="23_askib"]
+[ext_resource type="Texture2D" uid="uid://dlt6ho532wnvb" path="res://art/main/food animations/cheese animation/cheeseAnimation_009.png" id="24_nw47e"]
+[ext_resource type="Texture2D" uid="uid://bwfv0ia4h76ki" path="res://art/main/food animations/cheese animation/cheeseAnimation_010.png" id="25_cgm85"]
+[ext_resource type="Texture2D" uid="uid://bggxil815lmms" path="res://art/main/food animations/cheese animation/cheeseAnimation_011.png" id="26_2pgru"]
+[ext_resource type="Texture2D" uid="uid://bnop2w17c43ah" path="res://art/main/food animations/cheese animation/cheeseAnimation_012.png" id="27_ccm0e"]
+[ext_resource type="Texture2D" uid="uid://c4s5l3pegitvn" path="res://art/main/food animations/cheese animation/cheeseAnimation_013.png" id="28_6qa3l"]
+[ext_resource type="Texture2D" uid="uid://cqcx5ng61xces" path="res://art/main/food animations/pep animation/pepAnimation_000.png" id="29_pitok"]
+[ext_resource type="Texture2D" uid="uid://dsegr1idwisux" path="res://art/main/food animations/pep animation/pepAnimation_001.png" id="30_csylf"]
+[ext_resource type="Texture2D" uid="uid://uecdcppbi0vw" path="res://art/main/food animations/pep animation/pepAnimation_002.png" id="31_pamjq"]
+[ext_resource type="Texture2D" uid="uid://bow2gmkudslf4" path="res://art/main/food animations/pep animation/pepAnimation_003.png" id="32_mhicc"]
+[ext_resource type="Texture2D" uid="uid://8bqvmn6jwxyg" path="res://art/main/food animations/pep animation/pepAnimation_004.png" id="33_3ygfx"]
+[ext_resource type="Texture2D" uid="uid://3tix7e67it0" path="res://art/main/food animations/pep animation/pepAnimation_005.png" id="34_ftldp"]
+[ext_resource type="Texture2D" uid="uid://bm0kjhqw18ciy" path="res://art/main/food animations/pep animation/pepAnimation_006.png" id="35_0brjd"]
+[ext_resource type="Texture2D" uid="uid://p8scuwwp7qgt" path="res://art/main/food animations/pep animation/pepAnimation_007.png" id="36_gx1ik"]
+[ext_resource type="Texture2D" uid="uid://boofh8uoe4dbo" path="res://art/main/food animations/pep animation/pepAnimation_008.png" id="37_65sn4"]
+[ext_resource type="Texture2D" uid="uid://bihtym481p37m" path="res://art/main/food animations/pep animation/pepAnimation_009.png" id="38_kxi0t"]
+[ext_resource type="Texture2D" uid="uid://g8awy70jo6g5" path="res://art/main/food animations/pep animation/pepAnimation_010.png" id="39_fh7n6"]
+[ext_resource type="Texture2D" uid="uid://ckduq4dnelkii" path="res://art/main/food animations/pep animation/pepAnimation_011.png" id="40_dfpa7"]
+[ext_resource type="Texture2D" uid="uid://cncljrqifm7i0" path="res://art/main/food animations/pep animation/pepAnimation_012.png" id="41_qrhmn"]
+[ext_resource type="Texture2D" uid="uid://ck0ykfbnati5q" path="res://art/main/food animations/pep animation/pepAnimation_013.png" id="42_5gbig"]
+[ext_resource type="Texture2D" uid="uid://c172wdsrgw5t6" path="res://art/main/food animations/sausage animation/sausageAnimation_000.png" id="43_nxy86"]
+[ext_resource type="Texture2D" uid="uid://2vbx3jo3f05n" path="res://art/main/food animations/sausage animation/sausageAnimation_001.png" id="44_u23ck"]
+[ext_resource type="Texture2D" uid="uid://dv53rju0yhly2" path="res://art/main/food animations/sausage animation/sausageAnimation_002.png" id="45_v0hec"]
+[ext_resource type="Texture2D" uid="uid://c232xcn64hjuv" path="res://art/main/food animations/sausage animation/sausageAnimation_003.png" id="46_cyr7f"]
+[ext_resource type="Texture2D" uid="uid://bdffm3su1ivc" path="res://art/main/food animations/sausage animation/sausageAnimation_004.png" id="47_22ynn"]
+[ext_resource type="Texture2D" uid="uid://cp01aaxnrxgrj" path="res://art/main/food animations/sausage animation/sausageAnimation_005.png" id="48_8hna0"]
+[ext_resource type="Texture2D" uid="uid://clf4iv6g2ygjh" path="res://art/main/food animations/sausage animation/sausageAnimation_006.png" id="49_ve6ag"]
+[ext_resource type="Texture2D" uid="uid://c837o18eg65w6" path="res://art/main/food animations/sausage animation/sausageAnimation_007.png" id="50_lid8y"]
+[ext_resource type="Texture2D" uid="uid://cyt7nkh4y7el8" path="res://art/main/food animations/sausage animation/sausageAnimation_008.png" id="51_3ce0q"]
+[ext_resource type="Texture2D" uid="uid://230uyhaof5id" path="res://art/main/food animations/sausage animation/sausageAnimation_009.png" id="52_65pk0"]
+[ext_resource type="Texture2D" uid="uid://73g6maqmynxp" path="res://art/main/food animations/sausage animation/sausageAnimation_010.png" id="53_xxwvg"]
+[ext_resource type="Texture2D" uid="uid://cuvain5ys8ggn" path="res://art/main/food animations/sausage animation/sausageAnimation_011.png" id="54_wflba"]
+[ext_resource type="Texture2D" uid="uid://1w7fb7d8atm8" path="res://art/main/food animations/sausage animation/sausageAnimation_012.png" id="55_4onjf"]
+[ext_resource type="Texture2D" uid="uid://bxbv1h7m2uedj" path="res://art/main/food animations/pineapple animation/pineappleAnimation_013.png" id="56_w3lve"]
+[ext_resource type="Texture2D" uid="uid://3ne411xpvic4" path="res://art/main/food animations/pineapple animation/pineappleAnimation_000.png" id="57_jw32s"]
+[ext_resource type="Texture2D" uid="uid://nbsu23j8blm" path="res://art/main/food animations/pineapple animation/pineappleAnimation_001.png" id="58_nt7nw"]
+[ext_resource type="Texture2D" uid="uid://ovu28p4uxbkj" path="res://art/main/food animations/pineapple animation/pineappleAnimation_002.png" id="59_1edp2"]
+[ext_resource type="Texture2D" uid="uid://8jm3fd8lbqof" path="res://art/main/food animations/pineapple animation/pineappleAnimation_003.png" id="60_2ux7x"]
+[ext_resource type="Texture2D" uid="uid://dn5dgdtuy2i6u" path="res://art/main/food animations/pineapple animation/pineappleAnimation_004.png" id="61_13bn6"]
+[ext_resource type="Texture2D" uid="uid://cyidjppbpfmce" path="res://art/main/food animations/pineapple animation/pineappleAnimation_005.png" id="62_2xv7n"]
+[ext_resource type="Texture2D" uid="uid://ck1kxsr3iqywc" path="res://art/main/food animations/pineapple animation/pineappleAnimation_006.png" id="63_d4xo2"]
+[ext_resource type="Texture2D" uid="uid://dojisevb7o7mq" path="res://art/main/food animations/pineapple animation/pineappleAnimation_007.png" id="64_3vbom"]
+[ext_resource type="Texture2D" uid="uid://dv3coiuwel63x" path="res://art/main/food animations/pineapple animation/pineappleAnimation_008.png" id="65_6epc5"]
+[ext_resource type="Texture2D" uid="uid://c6mlo0ms833dc" path="res://art/main/food animations/pineapple animation/pineappleAnimation_009.png" id="66_cwjp1"]
+[ext_resource type="Texture2D" uid="uid://ymehvj5t1tex" path="res://art/main/food animations/pineapple animation/pineappleAnimation_010.png" id="67_f2mtd"]
+[ext_resource type="Texture2D" uid="uid://ct0d62ig6v7qi" path="res://art/main/food animations/pineapple animation/pineappleAnimation_011.png" id="68_s0d4g"]
+[ext_resource type="Texture2D" uid="uid://b46nsxfkg4px4" path="res://art/main/food animations/pineapple animation/pineappleAnimation_012.png" id="69_823jc"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uja77"]
-atlas = ExtResource("1_m7yel")
-region = Rect2(0, 0, 300, 500)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qrhy0"]
-atlas = ExtResource("1_m7yel")
-region = Rect2(300, 0, 300, 500)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hql7d"]
-atlas = ExtResource("1_m7yel")
-region = Rect2(600, 0, 300, 500)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_38l6c"]
-atlas = ExtResource("1_m7yel")
-region = Rect2(900, 0, 300, 500)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oc188"]
-atlas = ExtResource("1_m7yel")
-region = Rect2(1200, 0, 300, 500)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7gwdp"]
-atlas = ExtResource("1_m7yel")
-region = Rect2(1500, 0, 300, 500)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1kddw"]
-atlas = ExtResource("1_m7yel")
-region = Rect2(1800, 0, 300, 500)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_87mfs"]
-atlas = ExtResource("1_m7yel")
-region = Rect2(2100, 0, 300, 500)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c4781"]
-atlas = ExtResource("1_m7yel")
-region = Rect2(2400, 0, 300, 500)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sltq4"]
-atlas = ExtResource("1_m7yel")
-region = Rect2(2700, 0, 300, 500)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_lmfss"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_638ow"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uja77")
+"texture": ExtResource("2_uw1vb")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qrhy0")
+"texture": ExtResource("3_v6dq5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hql7d")
+"texture": ExtResource("4_ck1rw")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_38l6c")
+"texture": ExtResource("5_5k0l0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oc188")
+"texture": ExtResource("6_0ulhk")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7gwdp")
+"texture": ExtResource("7_uq0pb")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1kddw")
+"texture": ExtResource("8_nspty")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_87mfs")
+"texture": ExtResource("9_gn83f")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_c4781")
+"texture": ExtResource("10_oqyqu")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sltq4")
+"texture": ExtResource("11_pkeoj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_kblkq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_6j4wa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ntxdg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_w3lve")
 }],
 "loop": 0,
-"name": &"default",
-"speed": 18.0
+"name": &"whole",
+"speed": 26.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k6ws6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_a1hdm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ng7f5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_10vgs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_0p0hk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_gpwnj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_g8bbo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_nhm6g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_8q6xg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_askib")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_nw47e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_cgm85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_2pgru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_ccm0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_6qa3l")
+}],
+"loop": 0,
+"name": &"whole",
+"speed": 26.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ps5gb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_pitok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_csylf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_pamjq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_mhicc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_3ygfx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_ftldp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_0brjd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_gx1ik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_65sn4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_kxi0t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_fh7n6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_dfpa7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_qrhmn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_5gbig")
+}],
+"loop": 0,
+"name": &"whole",
+"speed": 26.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5t3o5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("43_nxy86")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_u23ck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_v0hec")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_cyr7f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_22ynn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_8hna0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_ve6ag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_lid8y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_3ce0q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_65pk0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_xxwvg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_wflba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_4onjf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_w3lve")
+}],
+"loop": 0,
+"name": &"whole",
+"speed": 26.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s4amr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("57_jw32s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_nt7nw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_1edp2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_2ux7x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_13bn6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_2xv7n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_d4xo2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_3vbom")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_6epc5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_cwjp1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_f2mtd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_s0d4g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_823jc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_w3lve")
+}],
+"loop": 0,
+"name": &"whole",
+"speed": 26.0
 }]
 
 [node name="ingredientSplat" type="Control" unique_id=1590403576]
@@ -90,8 +329,27 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_uja77")
 
-[node name="tomatoSplat" type="AnimatedSprite2D" parent="." unique_id=1644082486]
+[node name="tomatoSprite" type="AnimatedSprite2D" parent="." unique_id=995502046]
 unique_name_in_owner = true
-visible = false
-position = Vector2(596, 255)
-sprite_frames = SubResource("SpriteFrames_lmfss")
+sprite_frames = SubResource("SpriteFrames_638ow")
+animation = &"whole"
+
+[node name="cheeseSprite" type="AnimatedSprite2D" parent="." unique_id=20725999]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_k6ws6")
+animation = &"whole"
+
+[node name="pepperoniSprite" type="AnimatedSprite2D" parent="." unique_id=1458513016]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_ps5gb")
+animation = &"whole"
+
+[node name="sausageSprite" type="AnimatedSprite2D" parent="." unique_id=692463215]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_5t3o5")
+animation = &"whole"
+
+[node name="pineappleSprite" type="AnimatedSprite2D" parent="." unique_id=1164462940]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_s4amr")
+animation = &"whole"

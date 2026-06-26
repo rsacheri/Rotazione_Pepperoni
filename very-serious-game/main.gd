@@ -13,11 +13,13 @@ func _ready() -> void:
 	randomize() # randomize the seed
 	Global._set_initial_values() # reset global values
 	
+	$music.play()
+	
 	_new_order()
 	
-	await wait(0.75)
-	#_lost_life()
 	
+	#await wait(0.75)
+	#_lost_life()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -44,15 +46,23 @@ func _on_bear_throw() -> void:
 		pizza_object._add_sauce()
 	elif($%bear._is_holding_cheese()):
 		_throw_and_clear()
+		$ingredientSplat._play_cheese_animation()
+		await wait(0.3)
 		pizza_object._add_cheese()
 	elif($%bear._is_holding_pepperoni()):
 		_throw_and_clear()
+		$ingredientSplat._play_pepperoni_animation()
+		await wait(0.3)
 		pizza_object._add_pepperoni()
 	elif($%bear._is_holding_sausage()):
 		_throw_and_clear()
+		$ingredientSplat._play_sausage_animation()
+		await wait(0.3)
 		pizza_object._add_sausage()
 	elif($%bear._is_holding_pineapple()):
 		_throw_and_clear()
+		$ingredientSplat._play_pineapple_animation()
+		await wait(0.3)
 		pizza_object._add_pineapple()
 
 # throw animation and clear inventory
@@ -72,7 +82,7 @@ func _check_ingredient_throw():
 	
 	if (currItemIndex > Global.numIngredients):
 		return false
-	elif (heldIngredient == Global.order[currItemIndex]):
+	elif (currItemIndex < Global.order.size()) && (heldIngredient == Global.order[currItemIndex]):
 		Global.score += Global.tempScore
 		currItemIndex += 1
 		return true
@@ -155,7 +165,7 @@ func _new_order():
 	
 	add_child(pizza_object)
 	
-	pizza_object.position = Vector2(635, 167)
+	pizza_object.position = Vector2(655, 183)
 	
 	_generate_order()
 	
@@ -168,13 +178,15 @@ func _new_order():
 	$%order._match_order_to_picture()
 	
 	Global.numSpins = 0
+	
+	$ingredientSplat.move_to_front()
 
 
 ############################################################
 # 						lives
 ############################################################
 func _lost_life():
-	var temp
+	var temp = 100
 	
 	Global.lives -= 1
 	
@@ -189,7 +201,11 @@ func _lost_life():
 	else:
 		$lives._set_frame(Global.lives)
 		set_block_signals(true)
-		temp = Global.spinSpeed
+		if (Global.spinSpeed != 0):
+			temp = Global.spinSpeed
+		else:
+			await wait(0.75)
+			temp = Global.spinSpeed
 		Global.spinSpeed = 0
 		await wait(0.75)
 		Global.spinSpeed = temp
@@ -220,14 +236,14 @@ func _check_num_spins() -> bool:
 func _increase_difficulty():
 	if (Global.numOrdersCompleted % 5 == 0):
 		_incread_spin_speed()
-	if (Global.numOrdersCompleted % 10 == 0 && Global.numIngredients <= 5):
+	if (Global.numOrdersCompleted % 15 == 0 && Global.numIngredients <= 5):
 		_increase_num_ingredients()
 	#if (Global.numOrdersCompleted % 15 == 0 && Global.numIngredients >= 3):
 		#_decrease_num_spins_to_win()
 
 # increase spin speed every 5 correct orders
 func _incread_spin_speed():
-	Global.spinSpeed += 33
+	Global.spinSpeed += 25
 
 # increase number of toppings
 func _increase_num_ingredients():
@@ -246,8 +262,8 @@ func wait(seconds: float) -> void:
 
 func _move_pizza():
 	var tween = create_tween()
-	pizza_object.position = Vector2(938, 189)
-	tween.tween_property(pizza_object, "position", Vector2(938, -125), 0.5)
+	pizza_object.position = Vector2(980, 315)
+	tween.tween_property(pizza_object, "position", Vector2(980, -125), 0.5)
 
 # button presses
 func _input(event):
@@ -255,7 +271,7 @@ func _input(event):
 	
 	# submit order
 	if event.is_action_pressed("submit") && (pizza_object != null):
-		if ($%bear.rotation_degrees >= (19 + (360 * $%bear._get_num_rotations()))) && ($%bear.rotation_degrees <= (55 + (360 * $%bear._get_num_rotations()))):
+		if ($%bear.rotation_degrees >= (19 + (360 * $%bear._get_num_rotations()))) && ($%bear.rotation_degrees <= (90 + (360 * $%bear._get_num_rotations()))):
 			orderCompleted = _check_order()
 			if (orderCompleted):
 				_move_pizza()
@@ -274,18 +290,19 @@ func _input(event):
 			await wait(0.75)
 			Global.tempScore = 0
 			Global.tempTempScore = 0
-			pizza_object.queue_free()
+			if (pizza_object != null):
+				pizza_object.queue_free()
 			
 			if (Global.lives != 0):
 				_new_order()
 	
 	# throw out pizza
-	if event.is_action_pressed("trash_pizza"):
-		if (pizza_object != null):
-			_lost_life()
-			pizza_object.queue_free()
-			if (Global.lives != 0):
-				_new_order()
+	#if event.is_action_pressed("trash_pizza"):
+		#if (pizza_object != null):
+			#_lost_life()
+			#pizza_object.queue_free()
+			#if (Global.lives != 0):
+				#_new_order()
 
 # grabbing ingredients
 func _on_bear_grab() -> void:

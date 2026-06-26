@@ -4,9 +4,9 @@ extends Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	_on_main_new_order()
 
 # display score text
 func _on_main_new_order() -> void:
-	text = "Score: %s" % Global.score
-	print("from on main new order")
+	text = "%s" % Global.score
+	# print("from on main new order")

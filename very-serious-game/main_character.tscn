@@ -8,6 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://b86sklpj6fuqy" path="res://art/main/bear/mc grab sausage final.png" id="6_1vudk"]
 [ext_resource type="Texture2D" uid="uid://ww365u1mncyj" path="res://art/main/bear/mc grab pineapple final.png" id="7_k7f46"]
 [ext_resource type="Texture2D" uid="uid://bp7huq8fad1t6" path="res://art/main/bear/mc grab final.png" id="8_47qjj"]
+[ext_resource type="AudioStream" uid="uid://b7s1iheseqbd3" path="res://sounds/perfect put down.mp3" id="9_1vudk"]
+[ext_resource type="AudioStream" uid="uid://b25xq4rmqwkun" path="res://sounds/good.mp3" id="10_1vudk"]
+[ext_resource type="AudioStream" uid="uid://d06ukmwxrth42" path="res://sounds/okay.mp3" id="11_1vudk"]
+[ext_resource type="AudioStream" uid="uid://dcx5tt0tsbx1w" path="res://sounds/throw.mp3" id="12_1vudk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lmfss"]
 animations = [{
@@ -74,3 +78,15 @@ unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_lmfss")
 animation = &"pickUp"
 offset = Vector2(0, -49.165)
+
+[node name="perfectsfx" type="AudioStreamPlayer" parent="." unique_id=1271101346]
+stream = ExtResource("9_1vudk")
+
+[node name="goodsfx" type="AudioStreamPlayer" parent="." unique_id=618480312]
+stream = ExtResource("10_1vudk")
+
+[node name="okaysfx" type="AudioStreamPlayer" parent="." unique_id=790236449]
+stream = ExtResource("11_1vudk")
+
+[node name="throwsfx" type="AudioStreamPlayer" parent="." unique_id=2092412914]
+stream = ExtResource("12_1vudk")

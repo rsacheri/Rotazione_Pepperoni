@@ -1,16 +1,68 @@
 [gd_scene format=3 uid="uid://dwwygowpswrsu"]
 
-[ext_resource type="Texture2D" uid="uid://b6ol1y7jktkk6" path="res://art/main/Whole Foods (not to be confused with the very expensive store)/pepperoni final.png" id="1_o5gsa"]
+[ext_resource type="Texture2D" uid="uid://cqcx5ng61xces" path="res://art/main/food animations/pep animation/pepAnimation_000.png" id="1_cxe5h"]
+[ext_resource type="Texture2D" uid="uid://dsegr1idwisux" path="res://art/main/food animations/pep animation/pepAnimation_001.png" id="2_x84x6"]
+[ext_resource type="Texture2D" uid="uid://uecdcppbi0vw" path="res://art/main/food animations/pep animation/pepAnimation_002.png" id="3_jg2m4"]
+[ext_resource type="Texture2D" uid="uid://bow2gmkudslf4" path="res://art/main/food animations/pep animation/pepAnimation_003.png" id="4_ktxhp"]
+[ext_resource type="Texture2D" uid="uid://8bqvmn6jwxyg" path="res://art/main/food animations/pep animation/pepAnimation_004.png" id="5_qbnsl"]
+[ext_resource type="Texture2D" uid="uid://3tix7e67it0" path="res://art/main/food animations/pep animation/pepAnimation_005.png" id="6_mke7j"]
+[ext_resource type="Texture2D" uid="uid://bm0kjhqw18ciy" path="res://art/main/food animations/pep animation/pepAnimation_006.png" id="7_w7oax"]
+[ext_resource type="Texture2D" uid="uid://p8scuwwp7qgt" path="res://art/main/food animations/pep animation/pepAnimation_007.png" id="8_2ghrc"]
+[ext_resource type="Texture2D" uid="uid://boofh8uoe4dbo" path="res://art/main/food animations/pep animation/pepAnimation_008.png" id="9_ohbm8"]
+[ext_resource type="Texture2D" uid="uid://bihtym481p37m" path="res://art/main/food animations/pep animation/pepAnimation_009.png" id="10_37fcv"]
+[ext_resource type="Texture2D" uid="uid://g8awy70jo6g5" path="res://art/main/food animations/pep animation/pepAnimation_010.png" id="11_tatlf"]
+[ext_resource type="Texture2D" uid="uid://ckduq4dnelkii" path="res://art/main/food animations/pep animation/pepAnimation_011.png" id="12_a6s8m"]
+[ext_resource type="Texture2D" uid="uid://cncljrqifm7i0" path="res://art/main/food animations/pep animation/pepAnimation_012.png" id="13_c381q"]
+[ext_resource type="Texture2D" uid="uid://ck0ykfbnati5q" path="res://art/main/food animations/pep animation/pepAnimation_013.png" id="14_x84x6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lmfss"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_o5gsa")
+"texture": ExtResource("1_cxe5h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_x84x6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jg2m4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ktxhp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qbnsl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mke7j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_w7oax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_2ghrc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ohbm8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_37fcv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_tatlf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_a6s8m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_c381q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_x84x6")
 }],
 "loop": 1,
 "name": &"whole",
-"speed": 5.0
+"speed": 20.0
 }]
 
 [node name="pepperoni" type="Node2D" unique_id=1050781329]

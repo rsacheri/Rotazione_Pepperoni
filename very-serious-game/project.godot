@@ -11,18 +11,19 @@ config_version=5
 [application]
 
 config/name="Very_Serious_Game"
-run/main_scene="uid://ttvhmysaaa06"
+run/main_scene="uid://c8w2qjk24scyq"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Global="*uid://d2w6771xa54tr"
+Music="*uid://dalutjqkr6bl3"
 
 [display]
 
 window/size/viewport_width=1280
-window/size/viewport_height=720
+window/size/viewport_height=960
 window/stretch/mode="canvas_items"
 
 [input]

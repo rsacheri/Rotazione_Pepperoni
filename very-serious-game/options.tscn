@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dfhd5r58t2r6l"]
+
+[ext_resource type="Texture2D" uid="uid://cmn7adg3y54lv" path="res://art/starting menu/options.png" id="1_5v8ap"]
+[ext_resource type="Script" uid="uid://b8hwnd5n2jjeh" path="res://options.gd" id="1_se8ut"]
+
+[node name="options" type="Control" unique_id=1079811050]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_se8ut")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1773155148]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_5v8ap")
