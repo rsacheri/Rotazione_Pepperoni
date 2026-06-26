@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://b25xq4rmqwkun" path="res://sounds/good.mp3" id="10_1vudk"]
 [ext_resource type="AudioStream" uid="uid://d06ukmwxrth42" path="res://sounds/okay.mp3" id="11_1vudk"]
 [ext_resource type="AudioStream" uid="uid://dcx5tt0tsbx1w" path="res://sounds/throw.mp3" id="12_1vudk"]
+[ext_resource type="AudioStream" uid="uid://dpjvs2fkaifcb" path="res://sounds/trash ingredient.mp3" id="13_k7f46"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lmfss"]
 animations = [{
@@ -90,3 +91,6 @@ stream = ExtResource("11_1vudk")
 
 [node name="throwsfx" type="AudioStreamPlayer" parent="." unique_id=2092412914]
 stream = ExtResource("12_1vudk")
+
+[node name="trashsfx" type="AudioStreamPlayer" parent="." unique_id=548958818]
+stream = ExtResource("13_k7f46")

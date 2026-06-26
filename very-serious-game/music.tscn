@@ -10,3 +10,4 @@ script = ExtResource("2_5vxup")
 unique_name_in_owner = true
 stream = ExtResource("2_w5q55")
 volume_db = -20.0
+parameters/looping = true

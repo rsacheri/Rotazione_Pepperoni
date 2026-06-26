@@ -192,13 +192,16 @@ func _lost_life():
 	
 	# end game if 0 lives
 	if (Global.lives == 0):
+		$music.stop()
+		$%gameOver.play()
 		$lives._set_frame(Global.lives)
 		set_block_signals(true)
 		Global.spinSpeed = 0
-		await wait(2)
+		await wait(3.5)
 		get_tree().change_scene_to_file("res://ending_screen.tscn")
 	# change frame to reflect number of lives
 	else:
+		$%wrongOrder.play()
 		$lives._set_frame(Global.lives)
 		set_block_signals(true)
 		if (Global.spinSpeed != 0):
@@ -274,6 +277,7 @@ func _input(event):
 		if ($%bear.rotation_degrees >= (19 + (360 * $%bear._get_num_rotations()))) && ($%bear.rotation_degrees <= (90 + (360 * $%bear._get_num_rotations()))):
 			orderCompleted = _check_order()
 			if (orderCompleted):
+				$%correctOrder.play()
 				_move_pizza()
 				print("order complete!")
 				Global.numOrdersCompleted += 1
@@ -290,10 +294,10 @@ func _input(event):
 			await wait(0.75)
 			Global.tempScore = 0
 			Global.tempTempScore = 0
-			if (pizza_object != null):
-				pizza_object.queue_free()
 			
 			if (Global.lives != 0):
+				if (pizza_object != null):
+					pizza_object.queue_free()
 				_new_order()
 	
 	# throw out pizza

@@ -238,6 +238,7 @@ func _throw_score() -> void:
 
 func _trash_item():
 	if (rotation_degrees >= 300) && (rotation_degrees <= 335):
+		$trashsfx.play()
 		$%bear.play("default")
 		_clear_inventory()
 		Global.tempTempScore = 0

@@ -19,6 +19,9 @@
 [ext_resource type="PackedScene" uid="uid://d4m4g18baot80" path="res://ingredient_splat.tscn" id="15_vivmo"]
 [ext_resource type="PackedScene" uid="uid://blok0kyknsck6" path="res://mouse_speech.tscn" id="17_yaehf"]
 [ext_resource type="AudioStream" uid="uid://vx7y3ttg815d" path="res://sounds/main theme.mp3" id="19_cegan"]
+[ext_resource type="AudioStream" uid="uid://fihw75mg2aw0" path="res://sounds/wrong order.mp3" id="20_82xsv"]
+[ext_resource type="AudioStream" uid="uid://c5n82j0pgmxv3" path="res://sounds/game over.mp3" id="21_getpj"]
+[ext_resource type="AudioStream" uid="uid://bw6ta5r48wfwf" path="res://sounds/correct order.mp3" id="22_ryguw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_074og"]
 bg_color = Color(0.8784314, 0.70980394, 0.32156864, 1)
@@ -130,6 +133,18 @@ max_value = 15.0
 show_percentage = false
 script = ExtResource("10_4c57u")
 
+[node name="Label" type="Label" parent="UI" unique_id=887690149]
+visible = false
+layout_mode = 0
+offset_left = 121.0
+offset_top = 785.0
+offset_right = 171.0
+offset_bottom = 810.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("12_cegan")
+theme_override_font_sizes/font_size = 29
+text = "spins"
+
 [node name="order" parent="." unique_id=10254393 instance=ExtResource("14_w48qg")]
 unique_name_in_owner = true
 offset_left = -15.0
@@ -154,6 +169,20 @@ unique_name_in_owner = true
 stream = ExtResource("19_cegan")
 volume_db = -20.0
 parameters/looping = true
+
+[node name="wrongOrder" type="AudioStreamPlayer" parent="." unique_id=1015405664]
+unique_name_in_owner = true
+stream = ExtResource("20_82xsv")
+volume_db = -5.474
+
+[node name="gameOver" type="AudioStreamPlayer" parent="." unique_id=1643797549]
+unique_name_in_owner = true
+stream = ExtResource("21_getpj")
+volume_db = 4.561
+
+[node name="correctOrder" type="AudioStreamPlayer" parent="." unique_id=707158780]
+unique_name_in_owner = true
+stream = ExtResource("22_ryguw")
 
 [connection signal="newOrder" from="." to="UI/scoreLabel" method="_on_main_new_order"]
 [connection signal="newOrder" from="." to="UI/ordersCompleteLabel" method="_on_main_new_order"]

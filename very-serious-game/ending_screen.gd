@@ -37,7 +37,7 @@ func _input(event):
 			index = 0
 		$endingMenu.frame = index
 	
-	if event.is_action_pressed("enter"):
+	if event.is_action_pressed("trash_pizza") || event.is_action_pressed("enter"):
 		$optionSFX.play()
 		if (index == 0):
 			get_tree().change_scene_to_file("res://starting_screen.tscn")
